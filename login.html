@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Art Bridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+<nav>
+    <div class="logo">
+        <img src="logo.artbridge.png" alt="Art Bridge Logo">
+    </div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Search</a></li>
+        <li><a href="orders.html">Orders</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+<body>
+    <div class="container">
+        <div class="logo-art-bridge">
+        <img src="logo.artbridge.png" alt="Art Bridge Logo">
+        </div>  
+        <h1>ArtBridge</h1>
+        <div class="subtitle">Log in to your account</div>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="Login">Email:</label>
+                <input type="email" placeholder="Enter your email" id="Login" name="Login" required>
+            </div>
+            <div class="input-group">
+                <label for="Password">Password:</label>
+                <input type="password" placeholder="Enter your password" id="Password" name="Password" required>
+            </div>
+            <button type="submit" class="btn">Log in</button>
+        </form>
+        <p class="footer-text">Don't have an account? <a href="signup.html">Sign up here</a></p>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            alert('Login Berhasil! Mengalihkan ke halaman Home...');
+            window.location.href = "index.html"; 
+        });
+    </script>
+</body>
+</html>

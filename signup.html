@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Signup</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo.artbridge.png" alt="Art Bridge Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="search.html">Search</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="logo-art-bridge">
+        <img src="logo.artbridge.png" alt="Art Bridge Logo">
+        </div>  
+        <h1>ArtBridge</h1>
+        <div class="subtitle">Sign up to find work you love</div>
+        
+        <form action="#" method="POST">
+            <div class="name-row">
+                <div class="input-group">
+                    <label for="firstName">First name</label>
+                    <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                </div>
+                <div class="input-group">
+                    <label for="lastName">Last name</label>
+                    <input type="text" id="lastName" name="lastName" placeholder="Your last name" required>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Your password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="check-emails" required>
+                <label for="check-emails">Send me helpful emails to find rewarding work and job leads.</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="check-terms" required>
+                <label for="check-terms">
+                    Yes, I understand and agree to the ArtBridge Terms of Service, including the User Agreement and Privacy policy.
+                </label>
+            </div>
+            <button type="submit" class="btn">Create my account</button>  
+        <p class="footer-text">Already have an account? <a href="login.html">Log in</a></p>
+        </form>
+        </div>
+    </div>  
+</body>
+</html>
+    
+
+
+
