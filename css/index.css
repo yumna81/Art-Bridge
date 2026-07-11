@@ -1,9 +1,3 @@
-/* =====================================================
-   ArtBridge - base.css
-   Isinya: variabel warna, reset, tipografi, tombol,
-   navbar, footer, page-header, dan komponen umum
-   (card, table, form, grid) yang dipakai di banyak halaman.
-===================================================== */
 
 :root {
   --pink: #C9724A;
@@ -212,25 +206,6 @@ table tr:last-child td { border-bottom: none; }
   .grid-3, .grid-4 { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
 }
-/* =====================================================
-   ArtBridge - hero.css
-   Slider foto di beranda + info strip + CTA banner.
-   Khusus dipakai di index.html.
-===================================================== */
-
-:root {
-  --pink: #A15C38;        /* utama: tombol, link aktif — terracotta brown */
-  --pink-dark: #7A4128;   /* hover, teks aksen — dark brown */
-  --plum: #3B2A20;        /* header, footer, navbar gelap — espresso brown */
-  --lilac: #F3E7D4;       /* background lembut */
-  --lilac-soft: #EBDCC3;  /* background lembut 2 */
-  --cream: #FAF3E6;       /* background halaman */
-  --gold: #C08A34;        /* rating, aksen emas vintage */
-  --dark: #3A2C22;        /* teks gelap */
-  --gray: #8A7666;        /* teks abu hangat */
-  --border: #E2D2B8;      /* border krem gelap */
-  --radius: 14px;
-}
 
 /* ---------- Hero Slider (Blok JS 1) ---------- */
 .hero { position: relative; overflow: hidden; border-radius: 0 0 32px 32px; background: var(--plum); }
@@ -279,24 +254,6 @@ table tr:last-child td { border-bottom: none; }
   .slide-caption { max-width: 90%; }
   .slide img { height: 380px; }
   .info-strip .stat + .stat { border-left: none; }
-}
-/* =====================================================
-   ArtBridge - artist-cards.css
-   Kartu artis & kategori. Dipakai di index.html dan explore.html.
-===================================================== */
-
-:root {
-  --pink: #A15C38;        /* utama: tombol, link aktif — terracotta brown */
-  --pink-dark: #7A4128;   /* hover, teks aksen — dark brown */
-  --plum: #3B2A20;        /* header, footer, navbar gelap — espresso brown */
-  --lilac: #F3E7D4;       /* background lembut */
-  --lilac-soft: #EBDCC3;  /* background lembut 2 */
-  --cream: #FAF3E6;       /* background halaman */
-  --gold: #C08A34;        /* rating, aksen emas vintage */
-  --dark: #3A2C22;        /* teks gelap */
-  --gray: #8A7666;        /* teks abu hangat */
-  --border: #E2D2B8;      /* border krem gelap */
-  --radius: 14px;
 }
 
 .category-pill { text-align: center; padding: 1.1rem .5rem; border-radius: var(--radius); background: #fff; border: 1px solid var(--border); }
