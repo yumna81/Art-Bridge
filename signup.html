@@ -11,11 +11,9 @@
 <body>
 
 <!-- ============ TOP BAR ============ -->
-<header class="auth-topbar">
+<header>
   <div class="container">
     <a href="index.html" class="brand">
-      <img src="img/logo-artbridge.png" alt="ArtBridge Logo" class="logo-icon">
-      <span class="logo">Art<span>Bridge</span></span>
     </a>
   </div>
 </header>
@@ -59,10 +57,19 @@
       </div>
       <button type="submit" class="btn btn-primary btn-block">Create My Account</button>
     </form>
-
-    <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
+     <p class="auth-switch">Already have an account? <a href="login.html">Log in</a></p>
   </div>
 </section>
+
+<script>
+        const signupForm = document.getElementById('signupForm');
+
+        signupForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Account created successfully! Redirecting to Home...');
+            window.location.href = "index.html";
+        });
+    </script>
 
 </body>
 </html>
