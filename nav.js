@@ -15,15 +15,15 @@ function initNavSearch() {
   navForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const keyword = document.getElementById('navSearchInput').value.trim();
-    window.location.href = 'explore.html' + (keyword ? '?q=' + encodeURIComponent(keyword) : '');
+    window.location.href = 'search.html' + (keyword ? '?q=' + encodeURIComponent(keyword) : '');
   });
 
   const params = new URLSearchParams(window.location.search);
   const q = params.get('q');
-  const exploreInput = document.getElementById('searchArtist');
-  if (q && exploreInput) {
-    exploreInput.value = q;
-    exploreInput.dispatchEvent(new Event('input'));
+  const searchInput = document.getElementById('searchArtist');
+  if (q && searchInput) {
+    searchInput.value = q;
+    searchInput.dispatchEvent(new Event('input'));
   }
 }
 
