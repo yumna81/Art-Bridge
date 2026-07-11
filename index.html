@@ -1,113 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Art bridge</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArtBridge - Temukan & Pesan Karya Seni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/artist-cards.css">
 </head>
 <body>
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Welcome to Art Bridge</h1>
-                <p>Discover, create, and connect with the world of art.</p>
-                <a href="signup.html" class="btn">Get Started</a>
-            </div>
-        </section>
-    <nav>
-        <div class="logo">
-            <img src="images/logo.png" alt="Art Bridge Logo">
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="search.html">Search</a></li>
-            <li><a href="orders.html">Orders</a></li>
-            <li><a href="profile.html">Profile</a></li>
-            <li><a href="about.html">About</a></li>
-        </ul>
-    </nav>
-    <header>
-        <h1>Art Bridge</h1>
-        <h5>Your gateway to the world of art</h5>
-        <h6>Join to explore and create amazing art world</h6>
-        <button class="btn"><a href="signup.html">Sign Up</a></button>
-        <h6>Already have an account? <a href="login.html">Login here</a></h6>
-        <h6>Explore our gallery and discover the beauty of art</h6>
-        <h4>a popular categories on Art Bridge</h4>
-        <button class="category-item">
-                    <span class="category-icon"><i class="fa-solid fa-laptop-code"></i></span>
-                    <span>Digital</span>
-                </button>
-                <button class="category-item">
-                    <span class="category-icon"><i class="fa-solid fa-palette"></i></span>
-                    <span>Painting</span>
-                </button>
-                <button class="category-item">
-                    <span class="category-icon"><i class="fa-solid fa-dragon"></i></span>
-                    <span>Sculpture</span>
-                </button>
-                <button class="category-item">
-                    <span class="category-icon"><i class="fa-solid fa-camera"></i></span>
-                    <span>Photography</span>
-                </button>
-    </header>
 
-    <section class="artist-grid">
-        <h2 class="section-title">Featured Artists</h2>
-        <article class="artist-card">
-            <img src="https://picsum.photos/id/64/200/300" alt="Alinealunar">
-            <h3>Ayu Watercolor</h3>
-            <p class="type-watercolor">Watercolor Artist</p>
-            <p class="artist-description">Ayu is a talented watercolor artist known for her vibrant and expressive paintings. Her work captures the beauty of nature and evokes a sense of tranquility.</p>
-            <p class="card-footer">
-                <span class="rating"><i class="fa-solid fa-star"></i> 4.9</span>
-                <span class="orders-count">258 Orders</span>
-            </p>
-        </article>
-        <article class="artist-card">
-            <img src="https://picsum.photos/id/65/200/300" alt="Skyseniman">
-            <h3>Sky Seniman</h3>
-            <p class="type-digital">Digital Artist</p>
-            <p class="artist-description">Sky is a skilled digital artist who creates stunning illustrations and concept art. His work is characterized by its attention to detail and imaginative storytelling.</p>
-            <p class="card-footer">
-                <span class="rating"><i class="fa-solid fa-star"></i> 4.8</span>
-                <span class="orders-count">312 Orders</span>
-            </p>
-        </article>
-        <article class="artist-card">
-            <img src="https://picsum.photos/id/66/200/300" alt="Clowenart">
-            <h3>Clowen Art</h3>
-            <p class="type-sculpture">Sculpture Artist</p>
-            <p class="artist-description">Clowen is a talented sculpture artist who creates intricate and lifelike sculptures. His work often explores themes of identity and human emotion.</p>
-            <p class="card-footer">
-                <span class="rating"><i class="fa-solid fa-star"></i> 4.7</span>
-                <span class="orders-count">198 Orders</span>
-            </p>
-        </article>
-        <article class="artist-card">
-            <img src="https://picsum.photos/id/67/200/300" alt="Lunaart">
-            <h3>Luna Art</h3>
-            <p class="type-photography">Photography Artist</p>
-            <p class="artist-description">Luna is a talented photography artist who captures the beauty of the world through her lens. Her work often explores themes of light, shadow, and emotion.</p>
-            <p class="card-footer">
-                <span class="rating"><i class="fa-solid fa-star"></i> 4.6</span>
-                <span class="orders-count">145 Orders</span>
-            </p>
-        </article>
-        <article class="artist-card">
-            <img src="https://picsum.photos/id/68/200/300" alt="cydebuemo">
-            <h3>Cidebu Emo</h3>
-            <p class="type-watercolor">Watercolor Artist</p>
-            <p class="artist-description">Cidebu is a talented watercolor artist known for his unique style and vibrant color palette. His work often explores themes of nature and human emotion.</p>
-            <p class="card-footer">
-                <span class="rating"><i class="fa-solid fa-star"></i> 4.5</span>
-                <span class="orders-count">320 Orders</span>
-            </p>
-        </article>
-    </section>
-</main>
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+  <div class="container">
+
+    <div class="brand">
+      <img src="img/logo-artbridge.png" alt="Logo ArtBridge" class="logo-icon">
+      <a href="index.html" class="logo">Art<span>Bridge</span></a>
+    </div>
+
+    <button class="nav-toggle">&#9776;</button>
+
+    <div class="navbar-menu">
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Beranda</a></li>
+        <li><a href="search.html">Jelajahi Artis</a></li>
+        <li><a href="orders.html">Pesanan Saya</a></li>
+        <li><a href="profile.html">Profil</a></li>
+        <li><a href="contact.html">Kontak</a></li>
+      </ul>
+
+      <form class="nav-search" id="navSearchForm">
+        <input type="text" id="navSearchInput" placeholder="Cari artis atau karya...">
+        <button type="submit">&#8981;</button>
+      </form>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Masuk</a>
+        <a href="signup.html" class="btn btn-primary">Daftar</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ============ HERO SLIDER ============ -->
+<section class="hero">
+  <div class="slider-track">
+
+    <div class="slide">
+      <img src="https://picsum.photos/seed/artbridge1/1800/1000" alt="Ilustrasi digital seorang artis sedang menggambar">
+      <div class="slide-caption">
+        <span class="eyebrow">Temukan Artis Favoritmu</span>
+        <h2>Hubungkan Ide dengan Karya Nyata</h2>
+        <p>Pesan karya seni custom dari ratusan artis lokal terpercaya, mulai dari sketsa sampai lukisan digital.</p>
+        <a href="search.html" class="btn btn-primary">Mulai Jelajahi</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://picsum.photos/seed/artbridge2/1800/1000" alt="Contoh lukisan cat air pemandangan">
+      <div class="slide-caption">
+        <span class="eyebrow">Beragam Kategori</span>
+        <h2>Dari Watercolor Sampai Digital Art</h2>
+        <p>Digital, Traditional bahkan sampai Craft — semua ada di satu tempat.</p>
+        <a href="search.html" class="btn btn-primary">Lihat Kategori</a>
+      </div>
+    </div>
+
+    <div class="slide">
+      <img src="https://picsum.photos/seed/artbridge3/1800/1000" alt="Artis membuat potret custom">
+      <div class="slide-caption">
+        <span class="eyebrow">Untuk Para Kreator</span>
+        <h2>Jadikan Karyamu Sumber Penghasilan</h2>
+        <p>Buka lapak, unggah portofolio, dan terima pesanan langsung dari klien di seluruh Indonesia.</p>
+        <a href="signup.html" class="btn btn-primary">Gabung Jadi Artis</a>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="slider-arrow prev">&#10094;</button>
+  <button class="slider-arrow next">&#10095;</button>
+  <div class="slider-dots"></div>
+</section>
+
+<!-- ============ INFO STRIP ============ -->
+<section class="info-strip">
+  <div class="container">
+    <div class="stat">
+      <strong>500+</strong>
+      <span>Artis Terverifikasi</span>
+    </div>
+    <div class="stat">
+      <strong>10rb+</strong>
+      <span>Karya Selesai</span>
+    </div>
+    <div class="stat">
+      <strong>4.8/5</strong>
+      <span>Rating Rata-rata</span>
+    </div>
+    <div class="stat">
+      <strong>24</strong>
+      <span>Kota di Indonesia</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KATEGORI POPULER ============ -->
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <h2 class="section-title">Kategori Populer</h2>
+    <p class="section-subtitle">Pilih jenis karya yang kamu butuhkan</p>
+
+    <div class="grid-4">
+      <a href="search.html" class="category-pill">
+        <div class="emoji">
+           <img src="https://i.pinimg.com/736x/37/e0/f1/37e0f1084f76ba58e13514abe82f2b29.jpg" alt="Ikon Digital">
+        </div>
+        <p>Digital</p>
+      </a>
+      <a href="search.html" class="category-pill">
+        <div class="emoji">
+           <img src="https://i.pinimg.com/1200x/38/68/0f/38680f8e6388c5b6f0a0c02296561cb6.jpg" alt="Ikon Traditional">
+        </div>
+        <p>Traditional</p>
+      </a>
+      <a href="search.html" class="category-pill">
+        <div class="emoji">
+          <img src="https://i.pinimg.com/1200x/34/d6/60/34d660d3f53e3ea863154e2c5997978b.jpg" alt="Ikon Craft">
+        </div>
+        <p>Craft</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTIS REKOMENDASI ============ -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Artis Rekomendasi</h2>
+    <p class="section-subtitle">Beberapa artis dengan rating tertinggi minggu ini</p>
+
+    <div class="grid-4">
+      <div class="card artist-card">
+        <img src="https://picsum.photos/seed/ayu/400/300" alt="Portofolio Ayu Sketch">
+        <div class="info">
+          <h4>Ayu Sketch</h4>
+          <p class="tag-role">Sketch Artist · Jakarta</p>
+          <p class="rating">⭐ 4.9 <span class="count">(120 order)</span></p>
+          <p class="price">Mulai Rp150.000</p>
+        </div>
+      </div>
+      <div class="card artist-card">
+        <img src="https://picsum.photos/seed/dindo/400/300" alt="Portofolio Dindo Watercolor">
+        <div class="info">
+          <h4>Dindo Watercolor</h4>
+          <p class="tag-role">Watercolor Artist · Bandung</p>
+          <p class="rating">⭐ 4.8 <span class="count">(98 order)</span></p>
+          <p class="price">Mulai Rp250.000</p>
+        </div>
+      </div>
+      <div class="card artist-card">
+        <img src="https://picsum.photos/seed/miko/400/300" alt="Portofolio Miko Art">
+        <div class="info">
+          <h4>Miko Art</h4>
+          <p class="tag-role">Digital Artist · Surabaya</p>
+          <p class="rating">⭐ 4.8 <span class="count">(154 order)</span></p>
+          <p class="price">Mulai Rp180.000</p>
+        </div>
+      </div>
+      <div class="card artist-card">
+        <img src="https://picsum.photos/seed/nadia/400/300" alt="Portofolio Nadia Craft">
+        <div class="info">
+          <h4>Nadia Craft</h4>
+          <p class="tag-role">Craft Artist · Yogyakarta</p>
+          <p class="rating">⭐ 4.9 <span class="count">(76 order)</span></p>
+          <p class="price">Mulai Rp120.000</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BANNER ============ -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Punya Bakat Menggambar?</h2>
+      <p>Gabung sebagai artis di ArtBridge dan dapatkan klien dari seluruh Indonesia.</p>
+      <a href="signup.html" class="btn btn-primary">Daftar Sebagai Artis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="grid-4">
+      <div>
+        <h4>ArtBridge</h4>
+        <p style="color:#c8adb8;font-size:.9rem;">Menghubungkan artis dan klien untuk menciptakan karya luar biasa.</p>
+      </div>
+      <div>
+        <h4>Navigasi</h4>
+        <a href="index.html">Beranda</a>
+        <a href="search.html">Jelajahi Artis</a>
+        <a href="orders.html">Pesanan Saya</a>
+      </div>
+      <div>
+        <h4>Bantuan</h4>
+        <a href="contact.html">Kontak Kami</a>
+        <a href="contact.html">Pusat Bantuan</a>
+      </div>
+      <div>
+        <h4>Ikuti Kami</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 ArtBridge. Dibuat untuk tugas Final Project Pengenalan Perancangan Web.
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script src="js/slider.js"></script>
+>>>>>>> local
 </body>
 </html>

@@ -1,0 +1,34 @@
+/* =====================================================
+   ArtBridge - artist-cards.css
+   Kartu artis & kategori. Dipakai di index.html dan explore.html.
+===================================================== */
+
+:root {
+  --pink: #A15C38;        /* utama: tombol, link aktif — terracotta brown */
+  --pink-dark: #7A4128;   /* hover, teks aksen — dark brown */
+  --plum: #3B2A20;        /* header, footer, navbar gelap — espresso brown */
+  --lilac: #F3E7D4;       /* background lembut */
+  --lilac-soft: #EBDCC3;  /* background lembut 2 */
+  --cream: #FAF3E6;       /* background halaman */
+  --gold: #C08A34;        /* rating, aksen emas vintage */
+  --dark: #3A2C22;        /* teks gelap */
+  --gray: #8A7666;        /* teks abu hangat */
+  --border: #E2D2B8;      /* border krem gelap */
+  --radius: 14px;
+}
+
+.category-pill { text-align: center; padding: 1.1rem .5rem; border-radius: var(--radius); background: #fff; border: 1px solid var(--border); }
+.category-pill .emoji { font-size: 1.7rem; }
+.category-pill p { margin: .5rem 0 0; font-weight: 600; font-size: .9rem; font-family: 'Inter', sans-serif; }
+
+.artist-card { overflow: hidden; padding: 0; }
+.artist-card img { height: 240px; object-fit: cover; }
+.artist-card .info { padding: 1.1rem; }
+.artist-card h4 { margin-bottom: .15rem; }
+
+.tag-role { color: var(--gray); font-size: .85rem; margin-bottom: .5rem; }
+
+.rating { color: var(--gold); font-weight: 700; font-family: 'Inter', sans-serif; }
+.rating span.count { color: var(--gray); font-weight: 400; font-size: .85rem; }
+
+.price { color: var(--pink-dark); font-weight: 700; margin-top: .4rem; }
