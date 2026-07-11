@@ -1,76 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile - ArtBridge</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="profile.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Profile - ArtBridge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">
-            <img src="logo-artbridge.png" alt="Art Bridge Logo">
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+  <div class="container">
+
+    <div class="brand">
+      <img src="img/logo-artbridge.png" alt="ArtBridge Logo" class="logo-icon">
+      <a href="index.html" class="logo">Art<span>Bridge</span></a>
+    </div>
+
+    <button class="nav-toggle">&#9776;</button>
+
+    <div class="navbar-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Explore Artists</a></li>
+        <li><a href="orders.html">My Orders</a></li>
+        <li><a href="profile.html" class="active">Profile</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+
+      <form class="nav-search" id="navSearchForm">
+        <input type="text" id="navSearchInput" placeholder="Search artists or artwork...">
+        <button type="submit">&#8981;</button>
+      </form>
+
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="signup.html" class="btn btn-primary">Sign Up</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow">My Account</span>
+    <h1>My Profile</h1>
+    <p>Manage your portfolio and track your orders</p>
+  </div>
+</section>
+
+<!-- ============ PROFILE CONTENT ============ -->
+<section class="section">
+  <div class="container">
+    <div class="profile-layout">
+
+      <aside class="profile-side">
+        <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="Profile photo">
+        <h3>User Name</h3>
+        <p class="profile-handle">Visual Artist &amp; Illustrator</p>
+        <p class="profile-bio">Passionate about urban landscape sketching and digital architectural illustration.</p>
+        <div class="profile-stats">
+          <div>
+            <strong>3</strong>
+            <span>Artworks</span>
+          </div>
+          <div>
+            <strong>120</strong>
+            <span>Orders</span>
+          </div>
+          <div>
+            <strong>4.9</strong>
+            <span>Rating</span>
+          </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="search.html">Search</a></li>
-            <li><a href="orders.html">Orders</a></li>
-            <li><a href="profile.html" class="active">Profile</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="settings.html">Settings</a></li>
-        </ul>
-    </nav>
+        <div style="display:flex; flex-direction:column; gap:.6rem; margin-top:1.5rem;">
+          <button type="button" class="btn btn-primary btn-block">Edit Profile</button>
+          <a href="login.html" class="btn btn-outline btn-block">Logout</a>
+        </div>
+      </aside>
 
-    <main class="profile-wrapper">
-        
-        <section class="profile-header">
-            <div class="avatar-container">
-                <div class="avatar-placeholder">U</div>
+      <div class="profile-main">
+        <div class="card">
+          <h3 style="margin-bottom:1.25rem;">My Artworks</h3>
+          <div class="grid-3">
+            <div class="card artist-card">
+              <img src="https://picsum.photos/seed/artwork1/400/300" alt="Urban Landscape artwork">
+              <div class="info">
+                <h4>Urban Landscape</h4>
+                <p class="tag-role">Digital Painting</p>
+              </div>
             </div>
-            <div class="user-info-text">
-                <h2 class="user-name">User Name</h2>
-                <p class="user-role">Visual Artist & Illustrator</p>
-                <p class="user-bio">Passionate about urban landscape sketching and digital architectural illustration.</p>
+            <div class="card artist-card">
+              <img src="https://picsum.photos/seed/artwork2/400/300" alt="Classic Architecture artwork">
+              <div class="info">
+                <h4>Classic Architecture</h4>
+                <p class="tag-role">Traditional Art</p>
+              </div>
             </div>
-        </section>
-
-        <section class="portfolio-section">
-            <div class="section-title-container">
-                <h3>My Artworks</h3>
-                <div class="action-buttons">
-                    <button class="btn-edit">Edit Profile</button>
-                    <a href="login.html" class="btn-logout">Logout</a>
-                </div>
+            <div class="card artist-card">
+              <img src="https://picsum.photos/seed/artwork3/400/300" alt="Minimalist Space artwork">
+              <div class="info">
+                <h4>Minimalist Space</h4>
+                <p class="tag-role">Craft Art</p>
+              </div>
             </div>
+          </div>
+        </div>
+      </div>
 
-            <div class="portfolio-grid">
-                <div class="art-card">
-                    <div class="art-image-placeholder">Sketch 1</div>
-                    <div class="art-info">
-                        <h4>Urban Landscape</h4>
-                        <p>Digital Painting</p>
-                    </div>
-                </div>
-                <div class="art-card">
-                    <div class="art-image-placeholder">Sketch 2</div>
-                    <div class="art-info">
-                        <h4>Classic Architecture</h4>
-                        <p>Traditional Art</p>
-                    </div>
-                </div>
-                <div class="art-card">
-                    <div class="art-image-placeholder">Sketch 3</div>
-                    <div class="art-info">
-                        <h4>Minimalist Space</h4>
-                        <p>Craft Art</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    </div>
+  </div>
+</section>
 
-    </main>
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="grid-4">
+      <div>
+        <h4>ArtBridge</h4>
+        <p style="color:#c8adb8;font-size:.9rem;">Connecting artists and clients to create extraordinary artwork.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="search.html">Explore Artists</a>
+        <a href="orders.html">My Orders</a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="contact.html">Help Center</a>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 ArtBridge. Made for the Web Design Fundamentals Final Project.
+    </div>
+  </div>
+</footer>
 
+<script src="js/nav.js"></script>
 </body>
 </html>

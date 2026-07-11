@@ -1,3 +1,7 @@
+/* =====================================================================
+   ArtBridge - slider.js
+   Blok JavaScript 1 : slider foto di halaman Beranda (index.html)
+===================================================================== */
 
 function initSlider() {
   const track = document.querySelector('.slider-track');

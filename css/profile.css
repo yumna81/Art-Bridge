@@ -1,20 +1,22 @@
-
+/* =====================================================
+   ArtBridge - profile.css
+   Standalone stylesheet, khusus dipakai di profile.html
+===================================================== */
 
 :root {
-  --pink: #C9724A;
-  --pink-dark: #A85A38;
-  --plum: #211D1A;
-  --lilac: #F3E7DC;
-  --lilac-soft: #F8EFE5;
-  --cream: #F6F1E7;
-  --gold: #D8A339;
-  --dark: #2A211B;
-  --gray: #8C7F72;
-  --border: #E9DFD2;
+  --pink: #A15C38;
+  --pink-dark: #7A4128;
+  --plum: #3B2A20;
+  --lilac: #F3E7D4;
+  --lilac-soft: #EBDCC3;
+  --cream: #FAF3E6;
+  --gold: #C08A34;
+  --dark: #3A2C22;
+  --gray: #8A7666;
+  --border: #E2D2B8;
   --radius: 14px;
 }
 
-/* ---------- Reset & tipografi dasar ---------- */
 * { box-sizing: border-box; }
 
 body {
@@ -37,34 +39,13 @@ img { max-width: 100%; display: block; }
 .container { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem; }
 .section { padding: 4rem 0; }
 
-.section-title { text-align: center; margin-bottom: .6rem; }
-.section-title::after {
-  content: "";
-  display: block;
-  width: 52px;
-  height: 4px;
-  background: var(--gold);
-  border-radius: 999px;
-  margin: .8rem auto 0;
-}
-
-.section-subtitle { text-align: center; color: var(--gray); margin-bottom: 2.5rem; }
-
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  color: var(--pink-dark);
-  font-weight: 600;
-  letter-spacing: .06em;
-  text-transform: uppercase;
-  font-size: .78rem;
-  margin-bottom: .5rem;
+  display: inline-flex; align-items: center; gap: .5rem;
+  color: var(--gold); font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; font-size: .78rem; margin-bottom: .5rem;
 }
 
-.eyebrow::before { content: ""; width: 18px; height: 2px; background: var(--gold); display: inline-block; }
-
-/* ---------- Tombol ---------- */
+/* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
   padding: .7rem 1.5rem;
@@ -76,40 +57,26 @@ img { max-width: 100%; display: block; }
   font-size: .95rem;
   font-family: 'Inter', sans-serif;
 }
-
 .btn:hover { transform: translateY(-2px); }
-
-.btn-primary { background: var(--pink); color: #fff; box-shadow: 0 8px 20px rgba(201, 114, 74, .3); }
+.btn-primary { background: var(--pink); color: #fff; box-shadow: 0 8px 20px rgba(161, 92, 56, .3); }
 .btn-primary:hover { background: var(--pink-dark); }
-
 .btn-outline { background: transparent; border: 2px solid var(--pink); color: var(--pink-dark); }
 .btn-outline:hover { background: var(--pink); color: #fff; }
-
-.btn-ghost { background: var(--lilac); color: var(--pink-dark); }
-.btn-ghost:hover { background: var(--lilac-soft); }
-
 .btn-block { width: 100%; text-align: center; }
-
-.btn-google { display: flex; align-items: center; justify-content: center; gap: .6rem; background: #fff; border: 1.5px solid var(--border); color: var(--dark); }
-.btn-google:hover { border-color: var(--pink); transform: translateY(-2px); }
 
 /* ---------- Navbar ---------- */
 .navbar { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
-
 .navbar .container {
   display: flex; align-items: center; justify-content: space-between;
   padding-top: .8rem; padding-bottom: .8rem; gap: 1.1rem; position: relative;
   max-width: 1280px;
 }
-
 .brand { display: flex; align-items: center; gap: .5rem; flex-shrink: 0; }
 .logo-icon { width: 26px; height: 26px; object-fit: contain; }
-
 .logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.3rem; color: var(--pink-dark); }
 .logo span { color: var(--plum); }
 
 .navbar-menu { display: flex; align-items: center; gap: 1.1rem; flex: 1; justify-content: flex-end; min-width: 0; }
-
 .nav-links { display: flex; gap: 1.1rem; list-style: none; margin: 0; padding: 0; flex-wrap: nowrap; }
 .nav-links a { font-weight: 500; font-size: .92rem; color: var(--dark); padding: .3rem 0; border-bottom: 2px solid transparent; white-space: nowrap; }
 .nav-links a.active, .nav-links a:hover { color: var(--pink-dark); border-bottom: 2px solid var(--pink); }
@@ -131,7 +98,7 @@ footer a { color: #c3b3d6; display: block; margin-bottom: .5rem; }
 footer a:hover { color: var(--gold); }
 .footer-bottom { text-align: center; border-top: 1px solid rgba(255, 255, 255, .12); padding-top: 1.25rem; font-size: .85rem; color: #a793bd; }
 
-/* ---------- Page header (halaman selain beranda) ---------- */
+/* ---------- Page header ---------- */
 .page-header {
   background: var(--plum); color: #fff; padding: 3.5rem 0; text-align: center;
   position: relative; overflow: hidden;
@@ -140,53 +107,41 @@ footer a:hover { color: var(--gold); }
 }
 .page-header::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 85% 20%, rgba(232,185,75,.18), transparent 55%); }
 .page-header .container { position: relative; z-index: 1; }
-.page-header .eyebrow { color: var(--gold); justify-content: center; }
-.page-header .eyebrow::before { display: none; }
-.page-header p { color: #d7c5ea; }
+.page-header .eyebrow { justify-content: center; }
+.page-header p { color: #f0e6d8; }
 
-/* ---------- Grid & card umum ---------- */
+/* ---------- Grid ---------- */
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 .card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; }
 
-/* ---------- Table & badge ---------- */
-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: var(--radius); overflow: hidden; }
-table th, table td { padding: .9rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
-table th { background: var(--lilac-soft); color: var(--plum); font-family: 'Fraunces', serif; font-weight: 600; }
-table tr:last-child td { border-bottom: none; }
+/* ---------- Profile layout ---------- */
+.profile-layout { display: grid; grid-template-columns: 280px 1fr; gap: 2.5rem; align-items: start; }
+.profile-side { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem; text-align: center; }
+.profile-side img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 1rem; border: 3px solid var(--lilac-soft); }
+.profile-side h3 { margin-bottom: 0; }
+.profile-handle { color: var(--gray); font-size: .9rem; margin-bottom: .9rem; }
+.profile-bio { font-size: .9rem; color: var(--dark); margin-bottom: 1.2rem; }
+.profile-stats { display: flex; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 1.1rem; margin-top: .3rem; }
+.profile-stats div { text-align: center; }
+.profile-stats strong { display: block; font-family: 'Fraunces', serif; color: var(--plum); }
+.profile-stats span { font-size: .78rem; color: var(--gray); }
 
-.badge { padding: .25rem .7rem; border-radius: 999px; font-size: .8rem; font-weight: 600; }
-.badge-progress { background: #FDECC8; color: #8a6d00; }
-.badge-done { background: #D4EDDA; color: #1e7d34; }
-.badge-review { background: #E2D6F5; color: #5b31a8; }
+.profile-main .card h3 { margin-bottom: 1.25rem; }
 
-/* ---------- Form umum ---------- */
-.form-group { margin-bottom: 1.2rem; }
-.form-group label { display: block; font-weight: 600; margin-bottom: .4rem; font-size: .92rem; }
-.form-group input, .form-group select, .form-group textarea {
-  width: 100%; padding: .7rem .9rem; border: 1px solid var(--border); border-radius: 10px;
-  font-family: inherit; font-size: .95rem; background: #fff;
-}
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus { outline: 2px solid var(--pink); border-color: var(--pink); }
-.form-error { color: var(--pink-dark); font-size: .82rem; margin-top: .3rem; display: none; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+/* ---------- Artwork cards ---------- */
+.artist-card { overflow: hidden; padding: 0; }
+.artist-card img { height: 180px; object-fit: cover; }
+.artist-card .info { padding: 1.1rem; }
+.artist-card h4 { margin-bottom: .15rem; }
+.tag-role { color: var(--gray); font-size: .85rem; }
 
-.alert-success {
-  background: #D4EDDA; color: #1e7d34; padding: 1rem 1.2rem; border-radius: 12px;
-  margin-bottom: 1.5rem; display: none; font-weight: 600;
-}
-
-/* ---------- Layout dua kolom (dipakai di beberapa halaman) ---------- */
-.two-col { display: grid; grid-template-columns: 1.1fr .9fr; gap: 2.5rem; align-items: start; }
-
-/* ---------- Responsive umum ---------- */
-@media (max-width: 1150px) {
-  .nav-search { display: none; }
-}
+/* ---------- Responsive ---------- */
+@media (max-width: 1150px) { .nav-search { display: none; } }
 
 @media (max-width: 900px) {
+  .profile-layout { grid-template-columns: 1fr; }
   .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
-  .two-col { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 860px) {
@@ -203,7 +158,5 @@ table tr:last-child td { border-bottom: none; }
   .navbar.open .nav-search { display: flex; max-width: none; flex: none; }
   .navbar.open .nav-actions { flex-direction: column; }
   .navbar.open .nav-actions .btn { width: 100%; text-align: center; }
-
   .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
 }

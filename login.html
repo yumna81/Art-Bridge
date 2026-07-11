@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Art Bridge</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="login.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - ArtBridge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-<nav>
-    <div class="logo">
-        <img src="logo-artbridge.png" alt="Art Bridge Logo">
-    </div>
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="search.html">Search</a></li>
-        <li><a href="orders.html">Orders</a></li>
-        <li><a href="profile.html">Profile</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="settings.html">Settings</a></li>
-    </ul>
-</nav>
-    <div class="container">
-        <div class="logo-art-bridge">
-        <img src="logo-artbridge.png" alt="Art Bridge Logo">
-        </div>  
-        <h1>ArtBridge</h1>
-        <div class="subtitle">Log in to your account</div>
-        
-        <form id="loginForm">
-            <div class="input-group">
-                <label for="Login">Email:</label>
-                <input type="email" placeholder="Enter your email" id="Login" name="Login" required>
-            </div>
-            <div class="input-group">
-                <label for="Password">Password:</label>
-                <input type="password" placeholder="Enter your password" id="Password" name="Password" required>
-            </div>
-            <button type="submit" class="btn">Log in</button>
-        </form>
-        <p class="footer-text">Don't have an account? <a href="signup.html">Sign up here</a></p>
-    </div>
 
-    <script>
-        const loginForm = document.getElementById('loginForm');
+<!-- ============ TOP BAR ============ -->
+<header class="auth-topbar">
+  <div class="container">
+    <a href="index.html" class="brand">
+      <img src="img/logo-artbridge.png" alt="ArtBridge Logo" class="logo-icon">
+      <span class="logo">Art<span>Bridge</span></span>
+    </a>
+  </div>
+</header>
 
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            alert('Login Berhasil! Mengalihkan ke halaman Home...');
-            window.location.href = "index.html"; 
-        });
-    </script>
+<!-- ============ LOGIN FORM ============ -->
+<section class="auth-wrap">
+  <div class="auth-card">
+    <h1>Welcome Back</h1>
+    <p class="auth-subtitle">Log in to your account</p>
+
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Log In</button>
+    </form>
+
+    <p class="auth-switch">Don't have an account? <a href="signup.html">Sign up here</a></p>
+  </div>
+</section>
+
+<script>
+    const loginForm = document.getElementById('loginForm');
+
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Login successful! Redirecting to Home...');
+        window.location.href = "index.html";
+    });
+</script>
 </body>
 </html>

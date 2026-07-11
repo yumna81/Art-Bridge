@@ -1,0 +1,93 @@
+/* =====================================================
+   ArtBridge - login.css
+   Standalone stylesheet, khusus dipakai di login.html
+===================================================== */
+
+:root {
+  --pink: #A15C38;
+  --pink-dark: #7A4128;
+  --plum: #3B2A20;
+  --lilac: #F3E7D4;
+  --lilac-soft: #EBDCC3;
+  --cream: #FAF3E6;
+  --gold: #C08A34;
+  --dark: #3A2C22;
+  --gray: #8A7666;
+  --border: #E2D2B8;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: var(--dark);
+  background-color: var(--cream);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  margin: 0 0 .5rem 0;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: .7rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  font-size: .95rem;
+  font-family: 'Inter', sans-serif;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--pink); color: #fff; box-shadow: 0 8px 20px rgba(161, 92, 56, .3); }
+.btn-primary:hover { background: var(--pink-dark); }
+.btn-block { width: 100%; text-align: center; }
+
+/* ---------- Minimal top bar ---------- */
+.auth-topbar { background: #fff; border-bottom: 1px solid var(--border); padding: 1.1rem 0; }
+.auth-topbar .brand { display: flex; align-items: center; gap: .5rem; width: fit-content; }
+.auth-topbar .logo-icon { width: 26px; height: 26px; object-fit: contain; }
+.auth-topbar .logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.3rem; color: var(--pink-dark); }
+.auth-topbar .logo span { color: var(--plum); }
+
+/* ---------- Auth card ---------- */
+.auth-wrap {
+  min-height: calc(100vh - 68px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 3rem 1.25rem;
+  background: var(--lilac);
+}
+.auth-card {
+  background: #fff; border-radius: 20px; padding: 2.5rem; max-width: 440px; width: 100%;
+  border: 1px solid var(--border); box-shadow: 0 20px 40px rgba(59, 42, 32, .1);
+}
+.auth-card h1 { text-align: center; font-size: 1.6rem; margin-bottom: .3rem; }
+.auth-subtitle { text-align: center; color: var(--gray); margin-bottom: 1.75rem; font-size: .92rem; }
+
+.auth-switch { text-align: center; font-size: .9rem; color: var(--gray); margin-top: 1.4rem; }
+.auth-switch a { color: var(--pink-dark); font-weight: 600; }
+
+/* ---------- Form ---------- */
+.form-group { margin-bottom: 1.2rem; }
+.form-group label { display: block; font-weight: 600; margin-bottom: .4rem; font-size: .92rem; }
+.form-group input {
+  width: 100%; padding: .7rem .9rem; border: 1px solid var(--border); border-radius: 10px;
+  font-family: inherit; font-size: .95rem; background: #fff;
+}
+.form-group input:focus { outline: 2px solid var(--pink); border-color: var(--pink); }
+
+@media (max-width: 480px) {
+  .auth-card { padding: 1.75rem; }
+}
