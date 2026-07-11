@@ -1,9 +1,4 @@
-/* =====================================================================
-   ArtBridge - nav.js
-   Dipakai di SEMUA halaman:
-   1. Toggle menu jadi satu tombol hamburger di HP
-   2. Search box di navbar -> redirect ke explore.html dengan kata kunci
-===================================================================== */
+
 
 function initNavToggle() {
   const navToggle = document.querySelector('.nav-toggle');
@@ -23,7 +18,6 @@ function initNavSearch() {
     window.location.href = 'explore.html' + (keyword ? '?q=' + encodeURIComponent(keyword) : '');
   });
 
-  // kalau datang dari redirect nav search, isi otomatis kolom pencarian di explore.html
   const params = new URLSearchParams(window.location.search);
   const q = params.get('q');
   const exploreInput = document.getElementById('searchArtist');

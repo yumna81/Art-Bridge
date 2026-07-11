@@ -1,16 +1,16 @@
 
 
 :root {
-  --pink: #A15C38;        /* utama: tombol, link aktif — terracotta brown */
-  --pink-dark: #7A4128;   /* hover, teks aksen — dark brown */
-  --plum: #3B2A20;        /* header, footer, navbar gelap — espresso brown */
-  --lilac: #F3E7D4;       /* background lembut */
-  --lilac-soft: #EBDCC3;  /* background lembut 2 */
-  --cream: #FAF3E6;       /* background halaman */
-  --gold: #C08A34;        /* rating, aksen emas vintage */
-  --dark: #3A2C22;        /* teks gelap */
-  --gray: #8A7666;        /* teks abu hangat */
-  --border: #E2D2B8;      /* border krem gelap */
+  --pink: #A15C38;        
+  --pink-dark: #7A4128;   
+  --plum: #3B2A20;       
+  --lilac: #F3E7D4;      
+  --lilac-soft: #EBDCC3;  
+  --cream: #FAF3E6;       
+  --gold: #C08A34;        
+  --dark: #3A2C22;        
+  --gray: #8A7666;       
+  --border: #E2D2B8;     
   --radius: 14px;
 }
 

@@ -1,12 +1,5 @@
-/* =====================================================================
-   ArtBridge - main.js
-   Berisi 3 blok kode JavaScript utama:
-   1. Slider foto di halaman Beranda
-===================================================================== */
 
-/* ---------------------------------------------------------------------
-   BLOK JAVASCRIPT 1 : HERO IMAGE SLIDER (index.html)
---------------------------------------------------------------------- */
+/* HERO IMAGE SLIDER */
 function initSlider() {
   const track = document.querySelector('.slider-track');
   if (!track) return; // stop kalau slider tidak ada di halaman ini

@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="css/base.css">
 <link rel="stylesheet" href="css/hero.css">
 <link rel="stylesheet" href="css/artist-cards.css">
+<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="css/signup.css">
+<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -25,11 +29,11 @@
 
     <div class="navbar-menu">
       <ul class="nav-links">
-        <li><a href="index.html" class="active">Beranda</a></li>
-        <li><a href="search.html">Jelajahi Artis</a></li>
-        <li><a href="orders.html">Pesanan Saya</a></li>
-        <li><a href="profile.html">Profil</a></li>
-        <li><a href="contact.html">Kontak</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="search.html">Artists</a></li>
+        <li><a href="orders.html">My Orders</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="about.html">About Us</a></li>
       </ul>
 
       <form class="nav-search" id="navSearchForm">
@@ -38,8 +42,8 @@
       </form>
 
       <div class="nav-actions">
-        <a href="login.html" class="btn btn-outline">Masuk</a>
-        <a href="signup.html" class="btn btn-primary">Daftar</a>
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="signup.html" class="btn btn-primary">Sign Up</a>
       </div>
     </div>
 
@@ -51,32 +55,32 @@
   <div class="slider-track">
 
     <div class="slide">
-      <img src="https://picsum.photos/seed/artbridge1/1800/1000" alt="Ilustrasi digital seorang artis sedang menggambar">
+      <img src="https://picsum.photos/seed/artbridge1/1800/1000" alt="artis 1">
       <div class="slide-caption">
-        <span class="eyebrow">Temukan Artis Favoritmu</span>
-        <h2>Hubungkan Ide dengan Karya Nyata</h2>
-        <p>Pesan karya seni custom dari ratusan artis lokal terpercaya, mulai dari sketsa sampai lukisan digital.</p>
-        <a href="search.html" class="btn btn-primary">Mulai Jelajahi</a>
+        <span class="eyebrow">Find your favorite artists</span>
+        <h2>Connect Ideas with Real Art</h2>
+        <p>Order custom art from hundreds of trusted local artists, from sketches to digital paintings.</p>
+        <a href="search.html" class="btn btn-primary">Start Exploring</a>
       </div>
     </div>
 
     <div class="slide">
       <img src="https://picsum.photos/seed/artbridge2/1800/1000" alt="Contoh lukisan cat air pemandangan">
       <div class="slide-caption">
-        <span class="eyebrow">Beragam Kategori</span>
-        <h2>Dari Watercolor Sampai Digital Art</h2>
+        <span class="eyebrow">Various Categories</span>
+        <h2>From Watercolor to Digital Art</h2>
         <p>Digital, Traditional bahkan sampai Craft — semua ada di satu tempat.</p>
-        <a href="search.html" class="btn btn-primary">Lihat Kategori</a>
+        <a href="search.html" class="btn btn-primary">View Categories</a>
       </div>
     </div>
 
     <div class="slide">
       <img src="https://picsum.photos/seed/artbridge3/1800/1000" alt="Artis membuat potret custom">
       <div class="slide-caption">
-        <span class="eyebrow">Untuk Para Kreator</span>
-        <h2>Jadikan Karyamu Sumber Penghasilan</h2>
-        <p>Buka lapak, unggah portofolio, dan terima pesanan langsung dari klien di seluruh Indonesia.</p>
-        <a href="signup.html" class="btn btn-primary">Gabung Jadi Artis</a>
+        <span class="eyebrow">For Creators</span>
+        <h2>Turn Your Art into Income</h2>
+        <p>Open a shop, upload your portfolio, and receive direct orders from clients across Indonesia.</p>
+        <a href="signup.html" class="btn btn-primary">Join as an Artist</a>
       </div>
     </div>
 
@@ -92,19 +96,19 @@
   <div class="container">
     <div class="stat">
       <strong>500+</strong>
-      <span>Artis Terverifikasi</span>
+      <span>Verified Artists</span>
     </div>
     <div class="stat">
       <strong>10rb+</strong>
-      <span>Karya Selesai</span>
+      <span>Completed Works</span>
     </div>
     <div class="stat">
       <strong>4.8/5</strong>
-      <span>Rating Rata-rata</span>
+      <span>Average Rating</span>
     </div>
     <div class="stat">
       <strong>24</strong>
-      <span>Kota di Indonesia</span>
+      <span>Cities in Indonesia</span>
     </div>
   </div>
 </section>
@@ -112,8 +116,8 @@
 <!-- ============ KATEGORI POPULER ============ -->
 <section class="section" style="padding-bottom:0;">
   <div class="container">
-    <h2 class="section-title">Kategori Populer</h2>
-    <p class="section-subtitle">Pilih jenis karya yang kamu butuhkan</p>
+    <h2 class="section-title">Popular Categories</h2>
+    <p class="section-subtitle">Choose the type of artwork you need</p>
 
     <div class="grid-4">
       <a href="search.html" class="category-pill">
@@ -141,8 +145,8 @@
 <!-- ============ ARTIS REKOMENDASI ============ -->
 <section class="section">
   <div class="container">
-    <h2 class="section-title">Artis Rekomendasi</h2>
-    <p class="section-subtitle">Beberapa artis dengan rating tertinggi minggu ini</p>
+    <h2 class="section-title">Recommended Artists</h2>
+    <p class="section-subtitle">Some artists with the highest ratings this week</p>
 
     <div class="grid-4">
       <div class="card artist-card">
@@ -151,7 +155,7 @@
           <h4>Ayu Sketch</h4>
           <p class="tag-role">Sketch Artist · Jakarta</p>
           <p class="rating">⭐ 4.9 <span class="count">(120 order)</span></p>
-          <p class="price">Mulai Rp150.000</p>
+          <p class="price">Start from Rp150.000</p>
         </div>
       </div>
       <div class="card artist-card">
@@ -160,7 +164,7 @@
           <h4>Dindo Watercolor</h4>
           <p class="tag-role">Watercolor Artist · Bandung</p>
           <p class="rating">⭐ 4.8 <span class="count">(98 order)</span></p>
-          <p class="price">Mulai Rp250.000</p>
+          <p class="price">Start from Rp250.000</p>
         </div>
       </div>
       <div class="card artist-card">
@@ -169,7 +173,7 @@
           <h4>Miko Art</h4>
           <p class="tag-role">Digital Artist · Surabaya</p>
           <p class="rating">⭐ 4.8 <span class="count">(154 order)</span></p>
-          <p class="price">Mulai Rp180.000</p>
+          <p class="price">Start from Rp180.000</p>
         </div>
       </div>
       <div class="card artist-card">
@@ -178,7 +182,7 @@
           <h4>Nadia Craft</h4>
           <p class="tag-role">Craft Artist · Yogyakarta</p>
           <p class="rating">⭐ 4.9 <span class="count">(76 order)</span></p>
-          <p class="price">Mulai Rp120.000</p>
+          <p class="price">Start from Rp120.000</p>
         </div>
       </div>
     </div>
@@ -189,9 +193,9 @@
 <section class="section" style="padding-top:0;">
   <div class="container">
     <div class="cta-banner">
-      <h2>Punya Bakat Menggambar?</h2>
-      <p>Gabung sebagai artis di ArtBridge dan dapatkan klien dari seluruh Indonesia.</p>
-      <a href="signup.html" class="btn btn-primary">Daftar Sebagai Artis</a>
+      <h2>Got a Talent for Drawing?</h2>
+      <p>Join as an artist on ArtBridge and get clients from all over Indonesia.</p>
+      <a href="signup.html" class="btn btn-primary">Sign Up as an Artist</a>
     </div>
   </div>
 </section>
@@ -202,21 +206,21 @@
     <div class="grid-4">
       <div>
         <h4>ArtBridge</h4>
-        <p style="color:#c8adb8;font-size:.9rem;">Menghubungkan artis dan klien untuk menciptakan karya luar biasa.</p>
+        <p style="color:#c8adb8;font-size:.9rem;">Connecting artists and clients to create extraordinary artwork.</p>
       </div>
       <div>
-        <h4>Navigasi</h4>
-        <a href="index.html">Beranda</a>
-        <a href="search.html">Jelajahi Artis</a>
-        <a href="orders.html">Pesanan Saya</a>
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="search.html">Explore Artists</a>
+        <a href="orders.html">My Orders</a>
       </div>
       <div>
-        <h4>Bantuan</h4>
-        <a href="contact.html">Kontak Kami</a>
-        <a href="contact.html">Pusat Bantuan</a>
+        <h4>Help</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="contact.html">Help Center</a>
       </div>
       <div>
-        <h4>Ikuti Kami</h4>
+        <h4>Follow Us</h4>
         <a href="#">Instagram</a>
         <a href="#">TikTok</a>
       </div>
