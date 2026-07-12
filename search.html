@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container py-5">
+
+        <div class="row g-3 mb-5 align-items-center">
+            <div class="col-12 col-md-5 col-lg-4">
+                <div class="input-group rounded-pill overflow-hidden shadow-sm">
+                    <span class="input-group-text search-input border-0 ps-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#495057" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </span>
+                    <input type="text" class="form-control search-input border-0 py-2.5 text-dark fw-medium" placeholder="Search artist, style, keyword...">
+                </div>
+            </div>
+            
+            <div class="col-12 col-md-7 col-lg-8">
+                <div class="d-flex overflow-x-auto scroll-hide gap-2 justify-content-md-end">
+                    <button class="btn btn-filter-active rounded-pill px-4 btn-sm fw-semibold filter-btn" data-filter="all">All</button>
+                    <button class="btn btn-filter rounded-pill px-4 btn-sm fw-semibold filter-btn" data-filter="digital">Digital</button>
+                    <button class="btn btn-filter rounded-pill px-4 btn-sm fw-semibold filter-btn" data-filter="traditional">Traditional</button>
+                    <button class="btn btn-filter rounded-pill px-4 btn-sm fw-semibold filter-btn" data-filter="craft">Craft</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4" id="artist-grid">
+            
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="traditional">
+                <div class="card custom-card p-2.5 h-100 shadow-sm">
+                    <div class="card-img-container">
+                        <img src="img 1.avif" class="w-100 h-100 object-cover" alt="Art">
+                    </div>
+                    <div class="card-body p-1 pt-3">
+                        <h6 class="card-title fw-bold text-dark m-0">ALinesLunar</h6>
+                        <span class="badge badge-sketch rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Sketch Artist</span>
+                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
+                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 4.9</span>
+                            <span class="text-match">90% Match</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="digital">
+                <div class="card custom-card p-2.5 h-100 shadow-sm">
+                    <div class="card-img-container">
+                        <img src="img 2.avif" class="w-100 h-100 object-cover" alt="Art">
+                    </div>
+                    <div class="card-body p-1 pt-3">
+                        <h6 class="card-title fw-bold text-dark m-0">Yummy</h6>
+                        <span class="badge badge-digital rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Digital Artist</span>
+                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
+                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 4.9</span>
+                            <span class="text-match">88% Match</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="craft">
+                <div class="card custom-card p-2.5 h-100 shadow-sm">
+                    <div class="card-img-container">
+                        <img src="img 3.avif" class="w-100 h-100 object-cover" alt="Art">
+                    </div>
+                    <div class="card-body p-1 pt-3">
+                        <h6 class="card-title fw-bold text-dark m-0">Claude Art</h6>
+                        <span class="badge badge-watercolor rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Watercolor Artist</span>
+                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
+                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 5.0</span>
+                            <span class="text-match">80% Match</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="digital">
+                <div class="card custom-card p-2.5 h-100 shadow-sm">
+                    <div class="card-index-container card-img-container">
+                        <img src="img 4.avif" class="w-100 h-100 object-cover" alt="Art">
+                    </div>
+                    <div class="card-body p-1 pt-3">
+                        <h6 class="card-title fw-bold text-dark m-0">Ruka Sketch</h6>
+                        <span class="badge badge-digital rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Digital Artist</span>
+                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
+                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 4.5</span>
+                            <span class="text-match">75% Match</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="traditional">
+                <div class="card custom-card p-2.5 h-100 shadow-sm">
+                    <div class="card-img-container">
+                        <img src="img 5.avif" class="w-100 h-100 object-cover" alt="Art">
+                    </div>
+                    <div class="card-body p-1 pt-3">
+                        <h6 class="card-title fw-bold text-dark m-0">Patricia Angel</h6>
+                        <span class="badge badge-watercolor rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Watercolor Artist</span>
+                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
+                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 5.0</span>
+                            <span class="text-match">80% Match</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="digital">
+                <div class="card custom-card p-2.5 h-100 shadow-sm">
+                    <div class="card-img-container">
+                        <img src="img 6.avif" class="w-100 h-100 object-cover" alt="Art">
+                    </div>
+                    <div class="card-body p-1 pt-3">
+                        <h6 class="card-title fw-bold text-dark m-0">Karin Helson</h6>
+                        <span class="badge badge-digital rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Digital Artist</span>
+                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
+                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 4.5</span>
+                            <span class="text-match">75% Match</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const filterButtons = document.querySelectorAll(".filter-btn");
+            const artistItems = document.querySelectorAll(".artist-item");
+
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove("btn-filter-active");
+                        btn.classList.add("btn-filter");
+                    });
+                    this.classList.remove("btn-filter");
+                    this.classList.add("btn-filter-active");
+
+                    const filterValue = this.getAttribute("data-filter");
+
+                    artistItems.forEach(item => {
+                        const itemCategory = item.getAttribute("data-category");
+
+                        if (filterValue === "all" || filterValue === itemCategory) {
+                            item.style.setProperty("display", "block", "important");
+                        } else {
+                            item.style.setProperty("display", "none", "important");
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

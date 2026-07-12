@@ -1,0 +1,75 @@
+
+
+body { 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+    background-color: white; 
+}
+
+
+.search-input {
+    background-color: #CDBC9E !important;
+    border: none;
+}
+
+.search-input::placeholder {
+    color: #495057;
+}
+
+
+.btn-filter-active {
+    background-color: #8E877D !important;
+    color: white !important;
+}
+
+
+.btn-filter {
+    background-color: #DCD4C6 !important;
+    color: #495057 !important;
+    border: 1px solid #C4BBAF !important;
+}
+
+
+.custom-card {
+    background-color: #F0E4D2 !important;
+    border: 1px solid #E3D4C1 !important;
+    border-radius: 1rem !important; 
+}
+
+
+.card-img-container {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 0.75rem !important;
+}
+
+
+.badge-sketch { 
+    color: #D44793; 
+    border: 1px solid #D44793; 
+}
+
+.badge-digital { 
+    color: #3B66D4; 
+    border: 1px solid #3B66D4; 
+}
+
+.badge-watercolor { 
+    color: #2FA36B; 
+    border: 1px solid #2FA36B; 
+}
+
+
+.text-match { 
+    color: #2D7A4D; 
+    font-weight: 600; 
+}
+
+
+.scroll-hide::-webkit-scrollbar { 
+    display: none; 
+}
+
+.scroll-hide { 
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
