@@ -6,8 +6,8 @@
 <title>My Orders - ArtBridge</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="index.css">
-<link rel="stylesheet" href="orders.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/orders.css">
 </head>
 <body>
 
@@ -35,7 +35,7 @@
     <div class="order-list" id="orderList"></div>
 
     <div class="empty-state" id="orderEmpty" style="display:none;">
-      <div class="icon">&#128444;&#65039;</div>
+      <div class="icon"></div>
       <h3>No orders here yet</h3>
       <p>Orders you place with an artist will show up in this tab.</p>
       <a href="search.html" class="btn btn-primary" style="margin-top:1rem;">Find an Artist</a>
@@ -46,9 +46,9 @@
 
 <div id="site-footer"></div>
 
-<script src="partials.js"></script>
-<script src="artists-data.js"></script>
-<script src="orders-data.js"></script>
+<script src="js/partials.js"></script>
+<script src="js/artists-data.js"></script>
+<script src="js/orders-data.js"></script>
 <script>
   renderNavbar('orders');
   renderFooter();
