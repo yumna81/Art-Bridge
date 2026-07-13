@@ -11,7 +11,35 @@
 </head>
 <body>
 
-<div id="site-navbar"></div>
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+  <div class="container">
+
+    <div class="brand">
+      <img src="img/logo-artbridge.png" alt="ArtBridge Logo" class="logo-icon">
+      <a href="index.html" class="logo">Art<span>Bridge</span></a>
+    </div>
+
+    <button class="nav-toggle">&#9776;</button>
+
+    <div class="navbar-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Explore Artists</a></li>
+        <li><a href="orders.html" class="active">My Orders</a></li>
+        <li><a href="settings.html">Settings</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="profile.html" class="btn btn-outline">Profile</a>
+        <a href="login.html" class="btn btn-primary">Log Out</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
 
 <header class="page-header">
   <div class="container">
@@ -44,7 +72,11 @@
   </div>
 </section>
 
-<div id="site-footer"></div>
+<footer>
+  <div class="footer-bottom">
+    &copy; 2026 ArtBridge. Made for Final Project.
+  </div>
+</footer>
 
 <script src="js/partials.js"></script>
 <script src="js/artists-data.js"></script>
