@@ -1,173 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Explore Artists - ArtBridge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/search.css">
 </head>
 <body>
 
-    <div class="container py-5">
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+  <div class="container">
 
-        <div class="row g-3 mb-5 align-items-center">
-            <div class="col-12 col-md-5 col-lg-4">
-                <div class="input-group rounded-pill overflow-hidden shadow-sm">
-                    <span class="input-group-text search-input border-0 ps-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#495057" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                        </svg>
-                    </span>
-                    <input type="text" class="form-control search-input border-0 py-2.5 text-dark fw-medium" placeholder="Search artist, style, keyword...">
-                </div>
-            </div>
-            
-            <div class="col-12 col-md-7 col-lg-8">
-                <div class="d-flex overflow-x-auto scroll-hide gap-2 justify-content-md-end">
-                    <button class="btn btn-filter-active rounded-pill px-4 btn-sm fw-semibold filter-btn" data-filter="all">All</button>
-                    <button class="btn btn-filter rounded-pill px-4 btn-sm fw-semibold filter-btn" data-filter="digital">Digital</button>
-                    <button class="btn btn-filter rounded-pill px-4 btn-sm fw-semibold filter-btn" data-filter="traditional">Traditional</button>
-                    <button class="btn btn-filter rounded-pill px-4 btn-sm fw-semibold filter-btn" data-filter="craft">Craft</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="row g-4" id="artist-grid">
-            
-            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="traditional">
-                <div class="card custom-card p-2.5 h-100 shadow-sm">
-                    <div class="card-img-container">
-                        <img src="img 1.avif" class="w-100 h-100 object-cover" alt="Art">
-                    </div>
-                    <div class="card-body p-1 pt-3">
-                        <h6 class="card-title fw-bold text-dark m-0">ALinesLunar</h6>
-                        <span class="badge badge-sketch rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Sketch Artist</span>
-                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
-                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 4.9</span>
-                            <span class="text-match">90% Match</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="digital">
-                <div class="card custom-card p-2.5 h-100 shadow-sm">
-                    <div class="card-img-container">
-                        <img src="img 2.avif" class="w-100 h-100 object-cover" alt="Art">
-                    </div>
-                    <div class="card-body p-1 pt-3">
-                        <h6 class="card-title fw-bold text-dark m-0">Yummy</h6>
-                        <span class="badge badge-digital rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Digital Artist</span>
-                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
-                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 4.9</span>
-                            <span class="text-match">88% Match</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="craft">
-                <div class="card custom-card p-2.5 h-100 shadow-sm">
-                    <div class="card-img-container">
-                        <img src="img 3.avif" class="w-100 h-100 object-cover" alt="Art">
-                    </div>
-                    <div class="card-body p-1 pt-3">
-                        <h6 class="card-title fw-bold text-dark m-0">Claude Art</h6>
-                        <span class="badge badge-watercolor rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Watercolor Artist</span>
-                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
-                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 5.0</span>
-                            <span class="text-match">80% Match</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="digital">
-                <div class="card custom-card p-2.5 h-100 shadow-sm">
-                    <div class="card-index-container card-img-container">
-                        <img src="img 4.avif" class="w-100 h-100 object-cover" alt="Art">
-                    </div>
-                    <div class="card-body p-1 pt-3">
-                        <h6 class="card-title fw-bold text-dark m-0">Ruka Sketch</h6>
-                        <span class="badge badge-digital rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Digital Artist</span>
-                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
-                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 4.5</span>
-                            <span class="text-match">75% Match</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="traditional">
-                <div class="card custom-card p-2.5 h-100 shadow-sm">
-                    <div class="card-img-container">
-                        <img src="img 5.avif" class="w-100 h-100 object-cover" alt="Art">
-                    </div>
-                    <div class="card-body p-1 pt-3">
-                        <h6 class="card-title fw-bold text-dark m-0">Patricia Angel</h6>
-                        <span class="badge badge-watercolor rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Watercolor Artist</span>
-                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
-                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 5.0</span>
-                            <span class="text-match">80% Match</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-md-4 col-lg-3 artist-item" data-category="digital">
-                <div class="card custom-card p-2.5 h-100 shadow-sm">
-                    <div class="card-img-container">
-                        <img src="img 6.avif" class="w-100 h-100 object-cover" alt="Art">
-                    </div>
-                    <div class="card-body p-1 pt-3">
-                        <h6 class="card-title fw-bold text-dark m-0">Karin Helson</h6>
-                        <span class="badge badge-digital rounded-pill bg-transparent px-2 py-1 mt-2" style="font-size: 10px;">Digital Artist</span>
-                        <div class="d-flex justify-content-between align-items-center mt-3" style="font-size: 12px;">
-                            <span class="fw-bold text-dark"><span class="text-warning">★</span> 4.5</span>
-                            <span class="text-match">75% Match</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+    <div class="brand">
+      <img src="img/logo-artbridge.png" alt="ArtBridge Logo" class="logo-icon">
+      <a href="index.html" class="logo">Art<span>Bridge</span></a>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <button class="nav-toggle">&#9776;</button>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const filterButtons = document.querySelectorAll(".filter-btn");
-            const artistItems = document.querySelectorAll(".artist-item");
+    <div class="navbar-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html" class="active">Explore Artists</a></li>
+        <li><a href="orders.html">My Orders</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
 
-            filterButtons.forEach(button => {
-                button.addEventListener("click", function () {
-                    filterButtons.forEach(btn => {
-                        btn.classList.remove("btn-filter-active");
-                        btn.classList.add("btn-filter");
-                    });
-                    this.classList.remove("btn-filter");
-                    this.classList.add("btn-filter-active");
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-outline">Login</a>
+        <a href="signup.html" class="btn btn-primary">Sign Up</a>
+      </div>
+    </div>
 
-                    const filterValue = this.getAttribute("data-filter");
+  </div>
+</nav>
 
-                    artistItems.forEach(item => {
-                        const itemCategory = item.getAttribute("data-category");
+<!-- ============ PAGE HEADER ============ -->
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow">Find Your Artist</span>
+    <h1>Explore Artists</h1>
+    <p>Browse and filter hundreds of verified artists by category</p>
+  </div>
+</section>
 
-                        if (filterValue === "all" || filterValue === itemCategory) {
-                            item.style.setProperty("display", "block", "important");
-                        } else {
-                            item.style.setProperty("display", "none", "important");
-                        }
-                    });
+<!-- ============ SEARCH + FILTER + GRID ============ -->
+<section class="section">
+  <div class="container">
+
+    <div class="search-toolbar">
+      <div class="search-box">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+        </svg>
+        <input type="text" placeholder="Search artist, style, keyword...">
+      </div>
+      <div class="filter-pills">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="digital">Digital</button>
+        <button class="filter-btn" data-filter="traditional">Traditional</button>
+        <button class="filter-btn" data-filter="craft">Craft</button>
+      </div>
+    </div>
+
+    <div class="grid-4" id="artist-grid">
+
+      <div class="card artist-card artist-item" data-category="traditional">
+        <div class="card-img-container">
+          <img src="https://i.pinimg.com/736x/23/19/39/231939b8c98e40cca82ae77bde0b71ff.jpg" alt="ALinesLunar portfolio">
+        </div>
+        <div class="info">
+          <h4>ALinesLunar</h4>
+          <span class="category-badge cat-traditional">Sketch Artist</span>
+          <div class="card-meta">
+            <span class="rating"><span class="star">★</span> 4.9</span>
+            <span class="match">90% Match</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card artist-card artist-item" data-category="digital">
+        <div class="card-img-container">
+          <img src="https://i.pinimg.com/736x/c2/5c/6a/c25c6ab732e4653eab60129661ab4be2.jpg" alt="Yummy portfolio">
+        </div>
+        <div class="info">
+          <h4>Yummy</h4>
+          <span class="category-badge cat-digital">Digital Artist</span>
+          <div class="card-meta">
+            <span class="rating"><span class="star">★</span> 4.9</span>
+            <span class="match">88% Match</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card artist-card artist-item" data-category="craft">
+        <div class="card-img-container">
+          <img src="https://i.pinimg.com/736x/0d/72/e5/0d72e5355c9058cd1c23c0ea616ee857.jpg" alt="Claude Art portfolio">
+        </div>
+        <div class="info">
+          <h4>Claude Art</h4>
+          <span class="category-badge cat-craft">Watercolor Artist</span>
+          <div class="card-meta">
+            <span class="rating"><span class="star">★</span> 5.0</span>
+            <span class="match">80% Match</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card artist-card artist-item" data-category="digital">
+        <div class="card-img-container">
+          <img src="https://i.pinimg.com/736x/81/79/2d/81792da8b87b638b4ecd1c9330ccf933.jpg" alt="Ruka Sketch portfolio">
+        </div>
+        <div class="info">
+          <h4>Ruka Sketch</h4>
+          <span class="category-badge cat-digital">Digital Artist</span>
+          <div class="card-meta">
+            <span class="rating"><span class="star">★</span> 4.5</span>
+            <span class="match">75% Match</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card artist-card artist-item" data-category="traditional">
+        <div class="card-img-container">
+          <img src="https://i.pinimg.com/736x/28/35/ac/2835ac4ab9975d80b1cd7655fd8c55ac.jpg" alt="Patricia Angel portfolio">
+        </div>
+        <div class="info">
+          <h4>Patricia Angel</h4>
+          <span class="category-badge cat-traditional">Watercolor Artist</span>
+          <div class="card-meta">
+            <span class="rating"><span class="star">★</span> 5.0</span>
+            <span class="match">80% Match</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card artist-card artist-item" data-category="digital">
+        <div class="card-img-container">
+          <img src="https://i.pinimg.com/736x/b7/43/ea/b743eab1c8e4e2eebd9c0982b58b6762.jpg" alt="Karin Helson portfolio">
+        </div>
+        <div class="info">
+          <h4>Karin Helson</h4>
+          <span class="category-badge cat-digital">Digital Artist</span>
+          <div class="card-meta">
+            <span class="rating"><span class="star">★</span> 4.5</span>
+            <span class="match">75% Match</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="grid-4">
+      <div>
+        <h4>ArtBridge</h4>
+        <p style="color:#c8adb8;font-size:.9rem;">Connecting artists and clients to create extraordinary artwork.</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="search.html">Explore Artists</a>
+        <a href="orders.html">My Orders</a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="contact.html">Contact Us</a>
+        <a href="contact.html">Help Center</a>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 ArtBridge. Made for the Web Design Fundamentals Final Project.
+    </div>
+  </div>
+</footer>
+
+<script src="js/nav.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const artistItems = document.querySelectorAll(".artist-item");
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                filterButtons.forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+
+                const filterValue = this.getAttribute("data-filter");
+
+                artistItems.forEach(item => {
+                    const itemCategory = item.getAttribute("data-category");
+                    item.style.display = (filterValue === "all" || filterValue === itemCategory) ? "" : "none";
                 });
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
