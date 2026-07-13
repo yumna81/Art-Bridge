@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings - ArtBridge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css\index.css">
+<link rel="stylesheet" href="css\settings.css">
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar">
+  <div class="container">
+
+    <div class="brand">
+      <img src="img/logo-artbridge.png" alt="ArtBridge Logo" class="logo-icon">
+      <a href="index.html" class="logo">Art<span>Bridge</span></a>
+    </div>
+
+    <button class="nav-toggle">&#9776;</button>
+
+    <div class="navbar-menu">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="search.html">Explore Artists</a></li>
+        <li><a href="orders.html">My Orders</a></li>
+        <li><a href="settings.html" class="active">Settings</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="profile.html" class="btn btn-outline">Profile</a>
+        <a href="login.html" class="btn btn-primary">Log Out</a>
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+<!-- ============ PAGE HEADER ============ -->
+<section class="page-header">
+  <div class="container">
+    <span class="eyebrow">Find Your Artist</span>
+    <h1>Explore Artists</h1>
+    <p>Browse and filter hundreds of verified artists by category</p>
+  </div>
+</section>
+
+
+<header class="page-header">
+  <div class="container">
+    <span class="eyebrow">Your account</span>
+    <h1>Settings</h1>
+    <p>Manage your account details, notifications, and privacy.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container settings-wrap">
+
+    <div class="alert-success" id="settingsSuccess">Your changes have been saved.</div>
+
+    <div class="settings-section card">
+      <h3>Account</h3>
+      <p class="settings-desc">Update your email and password.</p>
+      <form id="accountForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="settingsEmail">Email</label>
+            <input type="email" id="settingsEmail" value="user@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="settingsPhone">Phone Number</label>
+            <input type="tel" id="settingsPhone" placeholder="08xx-xxxx-xxxx">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="settingsNewPassword">New Password</label>
+            <input type="password" id="settingsNewPassword" placeholder="Leave blank to keep current password">
+          </div>
+          <div class="form-group">
+            <label for="settingsConfirmPassword">Confirm New Password</label>
+            <input type="password" id="settingsConfirmPassword" placeholder="Repeat new password">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </form>
+    </div>
+
+    <div class="settings-section card">
+      <h3>Notifications</h3>
+      <p class="settings-desc">Choose what you want to be notified about.</p>
+
+      <div class="settings-row">
+        <div class="settings-row-label">
+          <strong>Order Updates</strong>
+          <span>Progress, revisions, and completed orders</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="switch-slider"></span>
+        </label>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-label">
+          <strong>New Messages</strong>
+          <span>When an artist or client sends you a chat</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked>
+          <span class="switch-slider"></span>
+        </label>
+      </div>
+
+      <div class="settings-row">
+        <div class="settings-row-label">
+          <strong>Promotions</strong>
+          <span>News, tips, and promos from ArtBridge</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox">
+          <span class="switch-slider"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="settings-section danger-zone">
+      <h3>Danger Zone</h3>
+      <p>Deleting your account will remove all your orders and profile data. This can't be undone.</p>
+      <button class="btn btn-danger" id="deleteAccountBtn">Delete Account</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-bottom">
+    &copy; 2026 ArtBridge. Made for Final Project.
+  </div>
+</footer>
+
+<script src="partials.js"></script>
+<script>
+  renderNavbar('settings');
+  renderFooter();
+
+  document.getElementById('accountForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const success = document.getElementById('settingsSuccess');
+    success.style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => { success.style.display = 'none'; }, 3000);
+  });
+
+  document.getElementById('deleteAccountBtn').addEventListener('click', function () {
+    if (confirm('Are you sure you want to delete your account? This cannot be undone.')) {
+      window.location.href = 'index.html';
+    }
+  });
+</script>
+</body>
+</html>
