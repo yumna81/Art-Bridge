@@ -62,7 +62,8 @@ img { max-width: 100%; display: block; }
 
 .eyebrow::before { content: ""; width: 18px; height: 2px; background: var(--gold); display: inline-block; }
 
-/* ---------- Tombol ---------- */
+
+/* ---------- Buttons ---------- */
 .btn {
   display: inline-block;
   padding: .7rem 1.5rem;
@@ -74,40 +75,27 @@ img { max-width: 100%; display: block; }
   font-size: .95rem;
   font-family: 'Inter', sans-serif;
 }
-
 .btn:hover { transform: translateY(-2px); }
-
-.btn-primary { background: var(--pink); color: #fff; box-shadow: 0 8px 20px rgba(201, 114, 74, .3); }
+.btn-primary { background: var(--pink); color: #fff; box-shadow: 0 8px 20px rgba(161, 92, 56, .3); }
 .btn-primary:hover { background: var(--pink-dark); }
-
 .btn-outline { background: transparent; border: 2px solid var(--pink); color: var(--pink-dark); }
 .btn-outline:hover { background: var(--pink); color: #fff; }
-
-.btn-ghost { background: var(--lilac); color: var(--pink-dark); }
-.btn-ghost:hover { background: var(--lilac-soft); }
-
 .btn-block { width: 100%; text-align: center; }
-
-.btn-google { display: flex; align-items: center; justify-content: center; gap: .6rem; background: #fff; border: 1.5px solid var(--border); color: var(--dark); }
-.btn-google:hover { border-color: var(--pink); transform: translateY(-2px); }
+.btn-sm { padding: .5rem 1.1rem; font-size: .85rem; }
 
 /* ---------- Navbar ---------- */
 .navbar { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 50; }
-
 .navbar .container {
   display: flex; align-items: center; justify-content: space-between;
   padding-top: .8rem; padding-bottom: .8rem; gap: 1.1rem; position: relative;
   max-width: 1280px;
 }
-
 .brand { display: flex; align-items: center; gap: .5rem; flex-shrink: 0; }
 .logo-icon { width: 26px; height: 26px; object-fit: contain; }
-
 .logo { font-family: 'Fraunces', serif; font-weight: 600; font-size: 1.3rem; color: var(--pink-dark); }
 .logo span { color: var(--plum); }
 
 .navbar-menu { display: flex; align-items: center; gap: 1.1rem; flex: 1; justify-content: flex-end; min-width: 0; }
-
 .nav-links { display: flex; gap: 1.1rem; list-style: none; margin: 0; padding: 0; flex-wrap: nowrap; }
 .nav-links a { font-weight: 500; font-size: .92rem; color: var(--dark); padding: .3rem 0; border-bottom: 2px solid transparent; white-space: nowrap; }
 .nav-links a.active, .nav-links a:hover { color: var(--pink-dark); border-bottom: 2px solid var(--pink); }
@@ -120,6 +108,13 @@ img { max-width: 100%; display: block; }
 .nav-actions .btn { padding: .6rem 1.2rem; font-size: .9rem; white-space: nowrap; }
 
 .nav-toggle { display: none; background: none; border: none; font-size: 1.5rem; color: var(--plum); cursor: pointer; z-index: 60; }
+
+/* ---------- Grid ---------- */
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+/* ---------- Footer ---------- */
+footer { background: var(--plum); color: #d9cfe6; padding: 1.5rem 0; margin-top: 3rem; }
+.footer-bottom { width: 100%; text-align: center; font-size: .85rem; color: #a793bd; }
 
 /* ---------- Footer ---------- */
 footer { background: var(--plum); color: #d9cfe6; padding: 1.5rem 0; margin-top: 3rem; }
@@ -250,7 +245,7 @@ margin-bottom:.4rem; }
 
 /* ---------- CTA banner ---------- */
 .cta-banner {
-  background: linear-gradient(120deg, var(--gray) 0%, var(--gray) 100%);
+  background: linear-gradient(120deg, var(--pink) 0%, var(--pink) 100%);
   border-radius: 24px; padding: 3rem 2rem; text-align: center; color: #fff; 
 }
 .cta-banner h2 { color: #fff; }
