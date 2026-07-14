@@ -14,10 +14,9 @@ function initNavSearch() {
   navForm.addEventListener('submit', function (e) {
     e.preventDefault();
     const keyword = document.getElementById('navSearchInput').value.trim();
-    window.location.href = 'explore.html' + (keyword ? '?q=' + encodeURIComponent(keyword) : '');
+    window.location.href = 'search.html' + (keyword ? '?q=' + encodeURIComponent(keyword) : '');
   });
 
-  // kalau datang dari redirect nav search, isi otomatis kolom pencarian di explore.html
   const params = new URLSearchParams(window.location.search);
   const q = params.get('q');
   const exploreInput = document.getElementById('searchArtist');

@@ -26,7 +26,6 @@
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="search.html">Explore Artists</a></li>
-        <li><a href="orders.html">My Orders</a></li>
         <li><a href="settings.html">Settings</a></li>
         <li><a href="about.html">About Us</a></li>
       </ul>
@@ -44,74 +43,157 @@
 <!-- ============ PAGE HEADER ============ -->
 <section class="page-header">
   <div class="container">
-    <span class="eyebrow">My Account</span>
     <h1>My Profile</h1>
     <p>Manage your portfolio</p>
   </div>
 </section>
 
-<!-- ============ PROFILE CONTENT ============ -->
+<!-- ============ PROFILE CONTENT (Instagram-style) ============ -->
 <section class="section">
   <div class="container">
-    <div class="profile-layout">
 
-      <aside class="profile-side">
+    <div class="ig-header">
+      <div class="ig-avatar-wrap">
         <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="Profile photo">
-        <h3>Keonho's gf</h3>
-        <p class="profile-handle">Visual Artist &amp; Illustrator</p>
-        <p class="profile-bio">Passionate about urban landscape sketching and digital illustration.</p>
-        <div class="profile-stats">
-          <div>
-            <strong>3</strong>
-            <span>Artworks</span>
-          </div>
-          <div>
-            <strong>120</strong>
-            <span>Orders</span>
-          </div>
-          <div>
-            <strong>4.9</strong>
-            <span>Rating</span>
-          </div>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:.6rem; margin-top:1.5rem;">
-          <button type="button" class="btn btn-primary btn-block">Edit Profile</button>
-          <a href="login.html" class="btn btn-outline btn-block">Logout</a>
-        </div>
-      </aside>
-
-      <div class="profile-main">
-        <div class="card">
-          <h3 style="margin-bottom:1.25rem;">My Artworks</h3>
-          <div class="grid-3">
-            <div class="card artist-card">
-              <img src="https://picsum.photos/seed/artwork1/400/300" alt="Urban Landscape artwork">
-              <div class="info">
-                <h4>Urban Landscape</h4>
-                <p class="tag-role">Digital Painting</p>
-              </div>
-            </div>
-            <div class="card artist-card">
-              <img src="https://picsum.photos/seed/artwork2/400/300" alt="Classic Architecture artwork">
-              <div class="info">
-                <h4>Classic Architecture</h4>
-                <p class="tag-role">Traditional Art</p>
-              </div>
-            </div>
-            <div class="card artist-card">
-              <img src="https://picsum.photos/seed/artwork3/400/300" alt="Minimalist Space artwork">
-              <div class="info">
-                <h4>Minimalist Space</h4>
-                <p class="tag-role">Craft Art</p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
+      <div class="ig-info">
+        <div class="ig-top-row">
+          <h2 class="ig-username">keonhosgf</h2>
+          <label for="addPortfolioToggle" class="btn btn-primary btn-sm">+ Add Portfolio</label>
+          <label for="editProfileToggle" class="btn btn-outline btn-sm">Edit Profile</label>
+        </div>
+
+        <div class="ig-stats">
+          <div><strong id="artworkCount">3</strong> <span>Artworks</span></div>
+          <div><strong>4.9</strong> <span>Rating</span></div>
+        </div>
+
+        <div class="ig-bio">
+          <p class="ig-fullname">Keonho's gf</p>
+          <p class="ig-role">Visual Artist &amp; Illustrator</p>
+          <p>Passionate about urban landscape sketching and digital illustration. <br> contact me: keonhoslove@gmail.com</p>
+        </div>
+      </div>
     </div>
+
+    <hr class="ig-divider">
+
+    <div class="ig-tabs">
+      <span class="ig-tab active">My Artworks</span>
+    </div>
+
+    <div class="ig-grid" id="portfolioGrid">
+      <a class="ig-post" data-id="default-1" data-default="true">
+        <img src="https://i.pinimg.com/1200x/ee/bf/b9/eebfb9c386a0625e2263dccbfe80aedf.jpg" alt="digital">
+        <div class="ig-post-caption">Digital Art</div>
+        <button type="button" class="ig-post-delete" title="Delete artwork">&times;</button>
+      </a>
+      <a class="ig-post" data-id="default-2" data-default="true">
+        <img src="https://i.pinimg.com/1200x/5e/c8/f3/5ec8f3522407bcc6b694f848a25f21b6.jpg" alt="digital">
+        <div class="ig-post-caption">Digital Art</div>
+        <button type="button" class="ig-post-delete" title="Delete artwork">&times;</button>
+      </a>
+      <a class="ig-post" data-id="default-3" data-default="true">
+        <img src="https://i.pinimg.com/736x/6f/fa/a3/6ffaa3caf8f64465ada744cc5b81cfb0.jpg" alt="traditional">
+        <div class="ig-post-caption">Traditional Art</div>
+        <button type="button" class="ig-post-delete" title="Delete artwork">&times;</button>
+      </a>
+    </div>
+
   </div>
 </section>
+
+<!-- ============ EDIT PROFILE MODAL (pure CSS, no JS) ============ -->
+<input type="checkbox" id="editProfileToggle" class="modal-toggle">
+<div class="modal-overlay">
+  <label for="editProfileToggle" class="modal-backdrop"></label>
+
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>Edit Profile</h3>
+      <label for="editProfileToggle" class="modal-close">&times;</label>
+    </div>
+
+    <form class="edit-profile-form">
+      <div class="edit-avatar-row">
+        <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="Profile photo" class="edit-avatar-preview">
+        <label class="btn btn-outline btn-sm" for="editPhotoInput">Change Photo</label>
+        <input type="file" id="editPhotoInput" accept="image/*" hidden>
+      </div>
+
+      <label class="field">
+        Full Name
+        <input type="text" name="fullname" value="Keonho's gf">
+      </label>
+
+      <label class="field">
+        Username
+        <input type="text" name="username" value="keonhosgf">
+      </label>
+
+      <label class="field">
+        Role / Title
+        <input type="text" name="role" value="Visual Artist & Illustrator">
+      </label>
+
+      <label class="field">
+        Bio
+        <textarea name="bio" rows="3">Passionate about urban landscape sketching and digital illustration.</textarea>
+      </label>
+
+      <div class="modal-actions">
+        <label for="editProfileToggle" class="btn btn-outline">Cancel</label>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+<!-- ============ ADD PORTFOLIO MODAL ============ -->
+<input type="checkbox" id="addPortfolioToggle" class="modal-toggle">
+<div class="modal-overlay">
+  <label for="addPortfolioToggle" class="modal-backdrop"></label>
+
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>Add New Portfolio</h3>
+      <label for="addPortfolioToggle" class="modal-close">&times;</label>
+    </div>
+
+    <form class="edit-profile-form" id="addPortfolioForm">
+      <label class="field">
+        Artwork Title
+        <input type="text" id="portfolioTitle" placeholder="e.g. Sunset Over the City" required>
+      </label>
+
+      <label class="field">
+        Category
+        <select id="portfolioCategory" required>
+          <option value="" disabled selected>Select category</option>
+          <option value="Digital Painting">Digital Painting</option>
+          <option value="Traditional Art">Traditional Art</option>
+          <option value="Craft Art">Craft Art</option>
+        </select>
+      </label>
+
+      <label class="field">
+        Artwork Image
+        <input type="file" id="portfolioImage" accept="image/*" required>
+      </label>
+
+      <div class="image-preview" id="portfolioImagePreview">No image selected</div>
+
+      <div class="modal-actions">
+        <label for="addPortfolioToggle" class="btn btn-outline" id="cancelAddPortfolio">Cancel</label>
+        <button type="submit" class="btn btn-primary">Save Artwork</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 
 <!-- ============ FOOTER ============ -->
 <footer>
@@ -120,6 +202,135 @@
   </div>
 </footer>
 
+<script>
+/* ============ ADD PORTFOLIO ============
+   Nyimpen karya baru ke localStorage supaya nempel walau di-refresh.
+   Modal buka/tutup tetap pakai checkbox (CSS), JS cuma ngurusin
+   preview gambar, simpan data, render kartu baru, dan hapus kartu.
+*/
+(function () {
+  var STORAGE_KEY = 'artbridge_portfolio';
+
+  var grid = document.getElementById('portfolioGrid');
+  var toggle = document.getElementById('addPortfolioToggle');
+  var form = document.getElementById('addPortfolioForm');
+  var fileInput = document.getElementById('portfolioImage');
+  var preview = document.getElementById('portfolioImagePreview');
+  var countEl = document.getElementById('artworkCount');
+
+  if (!grid) return;
+
+  function getSaved() {
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch (err) {
+      return [];
+    }
+  }
+
+  function saveAll(list) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+  }
+
+  function updateCount() {
+    if (countEl) countEl.textContent = grid.querySelectorAll('.ig-post').length;
+  }
+
+  function wireDelete(card, onDelete) {
+    var btn = card.querySelector('.ig-post-delete');
+    if (!btn) return;
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var title = card.querySelector('.ig-post-caption') ? card.querySelector('.ig-post-caption').textContent : 'karya ini';
+      if (!confirm('Hapus karya "' + title + '"?')) return;
+      card.remove();
+      if (onDelete) onDelete();
+      updateCount();
+    });
+  }
+
+  function createPost(artwork) {
+    var card = document.createElement('a');
+    card.className = 'ig-post';
+    card.setAttribute('data-id', artwork.id);
+    card.innerHTML =
+      '<img src="' + artwork.image + '" alt="' + artwork.title + '">' +
+      '<div class="ig-post-caption">' + artwork.title + '</div>' +
+      '<button type="button" class="ig-post-delete" title="Delete artwork">&times;</button>';
+
+    wireDelete(card, function () {
+      saveAll(getSaved().filter(function (a) { return a.id !== artwork.id; }));
+    });
+
+    return card;
+  }
+
+  function renderSaved() {
+    getSaved().forEach(function (artwork) {
+      grid.appendChild(createPost(artwork));
+    });
+    updateCount();
+  }
+
+  // Pasang tombol hapus untuk 3 karya default
+  grid.querySelectorAll('.ig-post[data-default="true"]').forEach(function (card) {
+    wireDelete(card);
+  });
+
+  // Preview gambar yang mau diupload
+  var uploadedImage = null;
+  if (fileInput) {
+    fileInput.addEventListener('change', function () {
+      var file = fileInput.files[0];
+      if (!file) {
+        uploadedImage = null;
+        preview.innerHTML = 'No image selected';
+        return;
+      }
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        uploadedImage = e.target.result;
+        preview.innerHTML = '<img src="' + uploadedImage + '" alt="Preview">';
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  // Simpan karya baru
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var title = document.getElementById('portfolioTitle').value.trim();
+      var category = document.getElementById('portfolioCategory').value;
+
+      if (!title || !category || !uploadedImage) return;
+
+      var artwork = {
+        id: 'art-' + Date.now(),
+        title: title,
+        category: category,
+        image: uploadedImage
+      };
+
+      var list = getSaved();
+      list.push(artwork);
+      saveAll(list);
+
+      grid.appendChild(createPost(artwork));
+      updateCount();
+
+      form.reset();
+      preview.innerHTML = 'No image selected';
+      uploadedImage = null;
+      if (toggle) toggle.checked = false; // tutup modal
+    });
+  }
+
+  renderSaved();
+})();
+</script>
 <script src="js/nav.js"></script>
 </body>
 </html>

@@ -85,3 +85,4 @@ img { max-width: 100%; display: block; }
 @media (max-width: 480px) {
   .auth-card { padding: 1.75rem; }
 }
+

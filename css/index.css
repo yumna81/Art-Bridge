@@ -36,9 +36,8 @@ img { max-width: 100%; display: block; }
 .container { max-width: 1140px; margin: 0 auto; padding: 0 1.25rem; }
 .section { padding: 4rem 0; }
 
-.section-title { text-align: center; margin-bottom: .6rem; }
+.section-title { text-align: center; margin-bottom: .1rem; }
 .section-title::after {
-  content: "";
   display: block;
   width: 52px;
   height: 4px;
@@ -230,17 +229,29 @@ table tr:last-child td { border-bottom: none; }
 .slider-dots .dot.active { background: var(--gold); transform: scale(1.2); }
 
 /* ---------- Info strip (pengganti "Kenapa ArtBridge") ---------- */
-.info-strip { background: var(--lilac); border-bottom: 1px solid var(--border); }
+.info-strip { background: var(--lilac); border-bottom: 1px solid var(--border); border: 6px dashed var(--border); top: 20px; }
 .info-strip .container { display: flex; justify-content: space-between; padding-top: 1.75rem; padding-bottom: 1.75rem; flex-wrap: wrap; gap: 1.5rem; }
 .info-strip .stat { text-align: center; flex: 1; min-width: 130px; }
-.info-strip .stat strong { display: block; font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--pink-dark); }
+.info-strip .stat strong { display: block; font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--pink-dark); 
+display:block;
+font-size:1.5rem;
+line-height: 0.7em;
+margin-bottom:.4rem; }
 .info-strip .stat span { color: var(--gray); font-size: .85rem; }
 .info-strip .stat + .stat { border-left: 1px solid var(--border); }
 
+
+.info-strip {
+  background: var(--lilac);
+  border: 6px dashed var(--border);
+  margin-top: 40px;
+  border-radius: 60px;
+}
+
 /* ---------- CTA banner ---------- */
 .cta-banner {
-  background: linear-gradient(120deg, var(--pink) 0%, var(--plum) 100%);
-  border-radius: 24px; padding: 3rem 2rem; text-align: center; color: #fff;
+  background: linear-gradient(120deg, var(--gray) 0%, var(--gray) 100%);
+  border-radius: 24px; padding: 3rem 2rem; text-align: center; color: #fff; 
 }
 .cta-banner h2 { color: #fff; }
 .cta-banner .btn-primary { background: #fff; color: var(--pink-dark); }
@@ -252,11 +263,11 @@ table tr:last-child td { border-bottom: none; }
   .info-strip .stat + .stat { border-left: none; }
 }
 
-.category-pill { text-align: center; padding: 1.1rem .5rem; border-radius: var(--radius); background: #fff; border: 1px solid var(--border); }
-.category-pill .emoji { font-size: 1.7rem; }
+.category-pill { text-align: center; padding: 1.1rem .5rem; border-radius: 50px; background: #fff; border: 6px dashed var(--border); }
 .category-pill p { margin: .5rem 0 0; font-weight: 600; font-size: .9rem; font-family: 'Inter', sans-serif; }
+.gambar { width: 200px; height: 200px; background: var(--lilac-soft); display: flex; align-items: center; justify-content: center; margin: 0 auto; }
 
-.artist-card { overflow: hidden; padding: 0; }
+.artist-card { overflow: hidden; padding: 0; border: dashed }
 .artist-card img { height: 240px; object-fit: cover; }
 .artist-card .info { padding: 1.1rem; }
 .artist-card h4 { margin-bottom: .15rem; }

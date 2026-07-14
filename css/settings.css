@@ -1,4 +1,18 @@
 
+:root {
+  --pink: #A15C38;
+  --pink-dark: #7A4128;
+  --plum: #3B2A20;
+  --lilac: #F3E7D4;
+  --lilac-soft: #EBDCC3;
+  --cream: #FAF3E6;
+  --gold: #C08A34;
+  --dark: #3A2C22;
+  --gray: #8A7666;
+  --border: #E2D2B8;
+  --radius: 14px;
+}
+
 /* ---------- Settings page ---------- */
 .settings-wrap { max-width: 760px; margin: 0 auto; }
 
@@ -8,7 +22,7 @@
 
 .settings-row {
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
-  padding: 1rem 0; border-bottom: 1px solid var(--border);
+  padding: 1rem 0; border-bottom: 1px solid var(--border); 
 }
 .settings-row:last-child { border-bottom: none; }
 .settings-row-label strong { display: block; font-size: .95rem; }
@@ -28,12 +42,14 @@
 .switch input:checked + .switch-slider { background: var(--pink); }
 .switch input:checked + .switch-slider::before { transform: translateX(19px); }
 
-.danger-zone { border: 1px solid var(--red); background: var(--red-bg); border-radius: var(--radius); padding: 1.5rem; }
-.danger-zone h3 { color: var(--red); }
-.danger-zone p { color: #8a3a30; font-size: .88rem; margin-bottom: 1.25rem; }
-.btn-danger { background: var(--red); color: #fff; }
-.btn-danger:hover { background: #a53c31; }
+.danger-zone { border: 1px solid var(--pink); background: var(--lilac-soft); border-radius: var(--radius); padding: 1.5rem; }
+.danger-zone h3 { color: var(--pink-dark); }
+.danger-zone p { color: var(--pink-dark); font-size: .88rem; margin-bottom: 1.25rem; }
+.btn-danger { background: var(--pink); color: #fff; }
+.btn-danger:hover { background: #d82f2f; }
+
 
 /* ---------- Footer ---------- */
 footer { background: var(--plum); color: #d9cfe6; padding: 1.5rem 0; margin-top: 3rem; }
 .footer-bottom { width: 100%; text-align: center; font-size: .85rem; color: #a793bd; }
+
