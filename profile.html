@@ -10,20 +10,22 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/detail-portfolio.css">
-
 <link rel="stylesheet" href="css/profile.css">
 </head>
 <body>
 
-style>
+<style>
   .custom-navbar {
     background: #fff;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     position: sticky;
     top: 0;
     z-index: 1030;
-    padding: 0.7rem 0;
+    padding: 0;
     border-bottom: 1px solid #E9DFD2;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
   }
   .custom-navbar .nav-container {
     display: flex;
@@ -31,8 +33,9 @@ style>
     justify-content: space-between;
     width: 100%;
     max-width: 100%;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    min-height: 56px;
   }
   .custom-brand {
     display: flex;
@@ -50,6 +53,7 @@ style>
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
   }
   .custom-link {
     font-family: 'Inter', sans-serif;
@@ -59,7 +63,7 @@ style>
     font-weight: 500;
   }
   .custom-link:hover {
-    color: #4a4238;
+    color: #dfcbb5;
   }
   .custom-link.active-link {
     font-weight: 700;
@@ -95,8 +99,27 @@ style>
     transition: all 0.2s;
   }
   .custom-btn-dark:hover {
-    background-color: #343a40;
-    border-color: #343a40;
+    background-color: #dfcbb5;
+    border-color: #000000;
+  }
+
+   .user-avatar-nav {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ebe3cc;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .user-avatar-nav img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   
   /* Tempel CSS Pemisah Baru di Sini jika tidak memakai file css eksternal */
@@ -125,18 +148,20 @@ style>
     </a>
 
     <div class="custom-menu">
-      <a href="index.html" class="custom-link active-link">Home</a>
-      <a href="search.html" class="custom-link">Explore Artists</a>
-      <a href="settings.html" class="custom-link">Settings</a>
-      <a href="about.html" class="custom-link">About Us</a>
+                <a href="index.html" class="custom-link">Home</a>
+                <a href="search.html" class="custom-link">Explore Artists</a>
+                <a href="settings.html" class="custom-link">Settings</a>
+                <a href="about.html" class="custom-link">About Us</a>
+               
       
-      <a href="profile.html" class="custom-btn-outline">Profile</a>
-      <a href="login.html" class="custom-btn-dark">Log Out</a>
-    </div>
+            <a href="profile.html" class="d-inline-flex align-items-center" aria-label="Open artist profile">
+                    <div class="user-avatar-nav">
+                        <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="User">
+                    </div>
+     <a href="login.html" class="custom-btn-dark">Log Out</a>
 
   </div>
 </nav>
-
 
 <section class="page-header">
   <div class="container">
@@ -210,7 +235,7 @@ style>
       <label for="editProfileToggle" class="modal-close">&times;</label>
     </div>
 
-    <form class="edit-profile-form">
+    <form class="edit-profile-form" autocomplete="on">
       <div class="edit-avatar-row">
         <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="Profile photo" class="edit-avatar-preview">
         <label class="btn btn-outline btn-sm" for="editPhotoInput">Change Photo</label>
@@ -257,7 +282,7 @@ style>
       <label for="addPortfolioToggle" class="modal-close">&times;</label>
     </div>
 
-    <form class="edit-profile-form" id="addPortfolioForm">
+    <form class="edit-profile-form" id="addPortfolioForm" autocomplete="on">
       <label class="field">
         Artwork Title
         <input type="text" id="portfolioTitle" placeholder="e.g. Sunset Over the City" required>
@@ -269,3 +294,149 @@ style>
           <option value="" disabled selected>Select category</option>
           <option value="Digital Painting">Digital Painting</option>
           <option value="Traditional Art">Traditional Art</option>
+        </select>
+      </label>
+
+      <label class="field">
+        Image URL
+        <input type="url" id="portfolioImage" placeholder="https://example.com/image.jpg">
+      </label>
+
+      <label class="field">
+        Or choose from gallery
+        <input type="file" id="portfolioImageFile" accept="image/*">
+      </label>
+
+      <div class="modal-actions">
+        <label for="addPortfolioToggle" class="btn btn-outline">Cancel</label>
+        <button type="submit" class="btn btn-primary">Add Artwork</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const editToggle = document.getElementById('editProfileToggle');
+    const addToggle = document.getElementById('addPortfolioToggle');
+    const editForm = document.querySelector('.modal-box form');
+    const addPortfolioForm = document.getElementById('addPortfolioForm');
+    const portfolioGrid = document.getElementById('portfolioGrid');
+    const artworkCount = document.getElementById('artworkCount');
+    const profileAvatar = document.querySelector('.ig-avatar-wrap img');
+    const editAvatarPreview = document.querySelector('.edit-avatar-preview');
+    const usernameEl = document.querySelector('.ig-username');
+    const fullnameEl = document.querySelector('.ig-fullname');
+    const roleEl = document.querySelector('.ig-role');
+    const bioEl = document.querySelector('.ig-bio p:last-of-type');
+    const photoInput = document.getElementById('editPhotoInput');
+    const portfolioImageInput = document.getElementById('portfolioImageFile');
+    let uploadedPortfolioImage = '';
+
+    function updateArtworkCount() {
+      if (!artworkCount || !portfolioGrid) return;
+      artworkCount.textContent = portfolioGrid.querySelectorAll('.ig-post').length;
+    }
+
+    function attachDeleteListeners() {
+      if (!portfolioGrid) return;
+      portfolioGrid.querySelectorAll('.ig-post-delete').forEach(function (button) {
+        button.addEventListener('click', function (event) {
+          event.preventDefault();
+          event.stopPropagation();
+          const card = button.closest('.ig-post');
+          if (card) {
+            card.remove();
+            updateArtworkCount();
+          }
+        });
+      });
+    }
+
+    if (photoInput) {
+      photoInput.addEventListener('change', function (event) {
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (readerEvent) {
+          const imageUrl = readerEvent.target.result;
+          if (profileAvatar) profileAvatar.src = imageUrl;
+          if (editAvatarPreview) editAvatarPreview.src = imageUrl;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    if (editForm) {
+      editForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const fullname = editForm.querySelector('input[name="fullname"]').value.trim() || "Keonho's gf";
+        const username = editForm.querySelector('input[name="username"]').value.trim() || 'keonhosgf';
+        const role = editForm.querySelector('input[name="role"]').value.trim() || 'Visual Artist & Illustrator';
+        const bio = editForm.querySelector('textarea[name="bio"]').value.trim() || 'Passionate about urban landscape sketching and digital illustration.';
+
+        if (fullnameEl) fullnameEl.textContent = fullname;
+        if (usernameEl) usernameEl.textContent = username;
+        if (roleEl) roleEl.textContent = role;
+        if (bioEl) bioEl.textContent = bio;
+
+        if (editToggle) editToggle.checked = false;
+      });
+    }
+
+    if (portfolioImageInput) {
+      portfolioImageInput.addEventListener('change', function (event) {
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function (readerEvent) {
+          uploadedPortfolioImage = readerEvent.target.result;
+        };
+        reader.readAsDataURL(file);
+      });
+    }
+
+    if (addPortfolioForm && portfolioGrid) {
+      addPortfolioForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const title = document.getElementById('portfolioTitle').value.trim();
+        const category = document.getElementById('portfolioCategory').value;
+        const imageUrl = document.getElementById('portfolioImage').value.trim();
+
+        if (!title || !category) return;
+
+        const placeholderImage = uploadedPortfolioImage || imageUrl || (category.includes('Digital')
+          ? 'https://i.pinimg.com/1200x/ee/bf/b9/eebfb9c386a0625e2263dccbfe80aedf.jpg'
+          : 'https://i.pinimg.com/736x/6f/fa/a3/6ffaa3caf8f64465ada744cc5b81cfb0.jpg');
+
+        const card = document.createElement('a');
+        card.className = 'ig-post';
+        card.href = `detail-portfolio.html?title=${encodeURIComponent(title)}&category=${encodeURIComponent(category)}&image=${encodeURIComponent(placeholderImage)}&owner=${encodeURIComponent('@keonhosgf')}&description=${encodeURIComponent('Artwork added from your portfolio gallery.')}&date=${encodeURIComponent('Today')}&tools=${encodeURIComponent('ArtBridge Upload')}`;
+        card.dataset.id = 'custom-' + Date.now();
+        card.dataset.default = 'false';
+        card.innerHTML = `
+          <img src="${placeholderImage}" alt="${title}">
+          <div class="ig-post-caption">${title}</div>
+          <button type="button" class="ig-post-delete" title="Delete artwork">&times;</button>
+        `;
+
+        portfolioGrid.appendChild(card);
+        attachDeleteListeners();
+        updateArtworkCount();
+
+        addPortfolioForm.reset();
+        uploadedPortfolioImage = '';
+        if (addToggle) addToggle.checked = false;
+      });
+    }
+
+    updateArtworkCount();
+    attachDeleteListeners();
+  });
+</script>
+</body>
+</html>
