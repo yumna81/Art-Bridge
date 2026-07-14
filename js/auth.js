@@ -1,21 +1,27 @@
-// auth.js
-(function () {
-  var LOGIN_KEY = 'artbridge_loggedIn';
 
-  window.ArtBridgeAuth = {
-    isLoggedIn: function () {
-      return localStorage.getItem(LOGIN_KEY) === 'true';
-    },
-    login: function () {
-      localStorage.setItem(LOGIN_KEY, 'true');
-    },
-    logout: function () {
-      localStorage.removeItem(LOGIN_KEY);
-      window.location.href = 'index.html';  
-    }
-  };
+const AUTH_KEY = 'artbridge_isLoggedIn';
 
-  if (!window.ArtBridgeAuth.isLoggedIn()) {
-    window.location.href = 'index.html';    
+function isLoggedIn() {
+  return localStorage.getItem(AUTH_KEY) === 'true';
+}
+
+function setLoggedIn() {
+  localStorage.setItem(AUTH_KEY, 'true');
+}
+
+function logout() {
+  localStorage.removeItem(AUTH_KEY);
+  window.location.href = 'login.html';
+}
+
+function requireLogin() {
+  if (!isLoggedIn()) {
+    window.location.replace('login.html');
   }
-})();
+}
+
+function redirectIfLoggedIn() {
+  if (isLoggedIn()) {
+    window.location.replace('index.html');
+  }
+}
