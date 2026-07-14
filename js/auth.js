@@ -11,12 +11,12 @@
     },
     logout: function () {
       localStorage.removeItem(LOGIN_KEY);
-      window.location.href = 'login.html';
+      window.location.href = 'index.html';
     }
   };
  
   if (!window.ArtBridgeAuth.isLoggedIn()) {
-    window.location.href = 'login.html';
+    window.location.href = 'index.html';
   }
-})();
+});
  
