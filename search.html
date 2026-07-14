@@ -179,5 +179,41 @@
         });
     });
 </script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const artistItems = document.querySelectorAll(".artist-item");
+        const searchInput = document.querySelector(".search-box input");
+
+        let currentFilter = "all";
+
+        function applyFilters() {
+            const keyword = searchInput.value.trim().toLowerCase();
+
+            artistItems.forEach(item => {
+                const itemCategory = item.getAttribute("data-category");
+                const artistName = item.querySelector("h4").textContent.toLowerCase();
+
+                const matchCategory = (currentFilter === "all" || currentFilter === itemCategory);
+                const matchKeyword = (keyword === "" || artistName.includes(keyword));
+
+                item.style.display = (matchCategory && matchKeyword) ? "" : "none";
+            });
+        }
+
+        filterButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                filterButtons.forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+                currentFilter = this.getAttribute("data-filter");
+                applyFilters();
+            });
+        });
+
+        searchInput.addEventListener("input", applyFilters);
+    });
+</script>
 </body>
 </html>
