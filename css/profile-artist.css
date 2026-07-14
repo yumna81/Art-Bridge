@@ -1,0 +1,195 @@
+body {
+    background-color: #ffffff !important; 
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* NAVBAR STYLE */
+.navbar-web {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #ebe3cc;
+    padding: 12px 0;
+}
+
+.navbar-brand {
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+}
+
+.nav-search-box {
+    background-color: #f6f1e3;
+    border-radius: 50px;
+    padding: 8px 18px;
+    width: 320px;
+}
+
+.nav-search-box input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.nav-link-item {
+    color: #5c574f;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+.nav-link-item:hover, .nav-link-item.active {
+    color: #4a4238;
+}
+
+.user-avatar-nav {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ebe3cc;
+}
+
+.user-avatar-nav img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CONTAINER UTAMA MELEBAR */
+.artist-web-wrapper {
+    max-width: 1140px !important;
+}
+
+/* PROFILE HERO HEADER */
+.profile-hero-section {
+    padding: 30px 0;
+    border-bottom: 1px solid #ebe3cc;
+}
+
+.profile-header-block {
+    max-width: 900px;
+    width: 100%;
+}
+
+/* FOTO PROFIL UKURAN JADI LEBIH GEDE (170PX) */
+.avatar-holder {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 4px solid #ebe3cc;
+    box-shadow: 0 8px 20px rgba(74, 66, 56, 0.06);
+}
+
+.avatar-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-artist-web {
+    background-color: #fcecef !important;
+    color: #e65c7b !important;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.artist-bio-web {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* STATISTIK DATA BAR */
+.web-stat-inline {
+    background-color: #fcfbf7;
+    border: 1px solid #ebe3cc;
+    padding: 10px 20px;
+    border-radius: 12px;
+    display: inline-flex;
+}
+
+.stat-cell-inline strong {
+    color: #1a1a1a;
+    font-size: 1rem;
+}
+
+/* ACTION BUTTONS */
+.btn-follow-web {
+    background-color: #4a4238 !important;
+    color: #ffffff !important;
+    border-radius: 12px !important;
+    font-weight: 600;
+    padding: 10px 24px;
+    border: none !important;
+    transition: all 0.2s ease;
+}
+
+.btn-follow-web:hover {
+    background-color: #2e2923 !important;
+}
+
+.btn-follow-web.following-active {
+    background-color: #ebe3cc !important;
+    color: #4a4238 !important;
+    border: 1px solid #dcd1b5 !important;
+}
+
+/* AREA FILTER BAR */
+.gallery-filter-bar {
+    border-bottom: 2px solid #f6f1e3;
+    padding-bottom: 15px;
+}
+
+.filter-pills-web {
+    display: flex;
+    gap: 8px;
+}
+
+.pill-web {
+    background-color: #f6f1e3;
+    color: #4a4238;
+    border: none;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.pill-web.active, .pill-web:hover {
+    background-color: #4a4238;
+    color: #ffffff;
+}
+
+/* GALERI GRID 3 KOLOM LUAS */
+.web-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.gallery-box {
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #f6f1e3;
+    border: 1px solid #ebe3cc;
+    transition: transform 0.2s ease;
+}
+
+.gallery-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-box:hover img {
+    transform: scale(1.05);
+}
