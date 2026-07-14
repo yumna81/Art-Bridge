@@ -1,7 +1,7 @@
-
+// auth.js
 (function () {
   var LOGIN_KEY = 'artbridge_loggedIn';
- 
+
   window.ArtBridgeAuth = {
     isLoggedIn: function () {
       return localStorage.getItem(LOGIN_KEY) === 'true';
@@ -11,12 +11,11 @@
     },
     logout: function () {
       localStorage.removeItem(LOGIN_KEY);
-      window.location.href = 'index.html';
+      window.location.href = 'login.html';  
     }
   };
- 
+
   if (!window.ArtBridgeAuth.isLoggedIn()) {
-    window.location.href = 'index.html';
+    window.location.href = 'login.html';    
   }
-});
- 
+})();
