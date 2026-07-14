@@ -7,33 +7,36 @@
 <link rel="icon" type="image/png" href="img/logo-artbridge.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 untuk mendukung tata letak navbar baru agar rapi -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Menghubungkan ke gaya navbar estetik -->
+<link rel="stylesheet" href="css/detail-portfolio.css">
+
 <link rel="stylesheet" href="css/search.css">
 </head>
 <body>
 
-<!-- ============ NAVBAR ============ -->
-<nav class="navbar">
-  <div class="container">
-
-    <div class="brand">
-      <img src="img/logo-artbridge.png" alt="ArtBridge Logo" class="logo-icon">
-      <a href="index.html" class="logo">Art<span>Bridge</span></a>
+<!-- ============ NAVBAR (Gaya Baru dengan Menu Utuh) ============ -->
+<nav class="navbar navbar-expand-lg navbar-web shadow-sm sticky-top">
+  <div class="container-fluid px-4 align-items-center">
+    
+    <!-- Bagian Brand/Logo Kiri -->
+    <div class="d-flex align-items-center gap-2">
+      <img src="img/logo-artbridge.png" alt="ArtBridge Logo" style="height: 24px; width: auto;">
+      <a href="index.html" class="navbar-brand fw-bold text-dark m-0 text-decoration-none" style="font-family: 'Fraunces', serif;">ArtBridge</a>
     </div>
 
-    <button class="nav-toggle">&#9776;</button>
-
-    <div class="navbar-menu">
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="search.html" class="active">Explore Artists</a></li>
-        <li><a href="settings.html">Settings</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <a href="profile.html" class="btn btn-outline">Profile</a>
-        <a href="login.html" class="btn btn-primary">Log Out</a>
-      </div>
+    <!-- Menu Navigasi & Tombol di Sebelah Kanan -->
+    <div class="ms-auto d-flex align-items-center gap-4">
+      <a href="index.html" class="nav-link-item text-decoration-none">Home</a>
+      <a href="search.html" class="nav-link-item active text-decoration-none fw-bold" style="border-bottom: 2px solid #4a4238;">Explore Artists</a>
+      <a href="settings.html" class="nav-link-item text-decoration-none">Settings</a>
+      <a href="about.html" class="nav-link-item text-decoration-none">About Us</a>
+      
+      <!-- Tombol Aksi Kanan -->
+      <a href="profile.html" class="btn btn-outline-dark rounded-pill px-3 py-1 btn-sm fw-semibold">Profile</a>
+      <a href="login.html" class="btn btn-dark rounded-pill px-3 py-1 btn-sm fw-semibold">Log Out</a>
     </div>
 
   </div>
@@ -124,7 +127,7 @@
       <div class="card artist-card artist-item" data-category="traditional">
         <div class="card-img-container">
           <img src="https://i.pinimg.com/736x/28/35/ac/2835ac4ab9975d80b1cd7655fd8c55ac.jpg" alt="Patricia Angel portfolio">
-        </div>
+      0 </div>
         <div class="info">
           <h4>Patricia Angel</h4>
           <span class="category-badge cat-traditional">Sketch Artist</span>
@@ -179,7 +182,6 @@
         });
     });
 </script>
-
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {

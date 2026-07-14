@@ -4,37 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ArtBridge - Find & Order Custom Art</title>
-<link rel="icon" type="image/png" href="img/logo-artbridge.png">
+<link class="icon" type="image/png" href="img/logo-artbridge.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/index.css">
 <script>requireLogin();</script>
+
+<style>
+  .custom-navbar {
+    background: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #E9DFD2;
+  }
+  .custom-navbar .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .custom-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  .custom-brand span {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: #212529;
+    font-size: 1.25rem;
+  }
+  .custom-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .custom-link {
+    font-family: 'Inter', sans-serif;
+    color: #212529;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .custom-link:hover {
+    color: #4a4238;
+  }
+  .custom-link.active-link {
+    font-weight: 700;
+    border-bottom: 2px solid #4a4238;
+    padding-bottom: 2px;
+  }
+  .custom-btn-outline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #212529;
+    background-color: transparent;
+    border: 1px solid #212529;
+    border-radius: 50rem;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .custom-btn-outline:hover {
+    background-color: #212529;
+    color: #fff;
+  }
+  .custom-btn-dark {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #212529;
+    border: 1px solid #212529;
+    border-radius: 50rem;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .custom-btn-dark:hover {
+    background-color: #343a40;
+    border-color: #343a40;
+  }
+  
+  /* Tempel CSS Pemisah Baru di Sini jika tidak memakai file css eksternal */
+  .hero { margin-bottom: 3rem; }
+  .slide-caption h2 { font-size: 3rem; margin-bottom: 1.5rem; }
+  .slide-caption p { font-size: 1.25rem; margin-bottom: 2rem; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 2rem; }
+  .artist-card { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+  .artist-card img { width: 100%; height: 280px; object-fit: cover; }
+  .artist-card .info { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.5rem; }
+  .artist-card .info h4 { font-size: 1.25rem; margin: 0; }
+  .artist-card .tag-role { font-size: 0.95rem; color: #6c757d; margin: 0; }
+  .artist-card .rating { font-size: 1rem; font-weight: 600; margin: 0; display: flex; align-items: center; gap: 0.25rem; }
+  .artist-card .price { font-size: 1.05rem; font-weight: 700; color: #4a4238; margin-top: 0.25rem; }
+</style>
 </head>
 <body>
 
 <!-- ============ NAVBAR ============ -->
-<nav class="navbar">
-  <div class="container">
+<nav class="custom-navbar">
+  <div class="nav-container">
+    
+    <a href="index.html" class="custom-brand">
+      <img src="img/logo-artbridge.png" alt="ArtBridge Logo" style="height: 24px; width: auto;">
+      <span>ArtBridge</span>
+    </a>
 
-    <div class="brand">
-      <img src="img/logo-artbridge.png" alt="ArtBridge Logo" class="logo-icon">
-      <a href="index.html" class="logo">Art<span>Bridge</span></a>
-    </div>
-
-    <button class="nav-toggle">&#9776;</button>
-
-    <div class="navbar-menu">
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="search.html">Explore Artists</a></li>
-        <li><a href="settings.html">Settings</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
-
-      <div class="nav-actions">
-        <a href="profile.html" class="btn btn-outline">Profile</a>
-        <a href="login.html" class="btn btn-primary">Log Out</a>
-      </div>
+    <div class="custom-menu">
+      <a href="index.html" class="custom-link active-link">Home</a>
+      <a href="search.html" class="custom-link">Explore Artists</a>
+      <a href="settings.html" class="custom-link">Settings</a>
+      <a href="about.html" class="custom-link">About Us</a>
+      
+      <a href="profile.html" class="custom-btn-outline">Profile</a>
+      <a href="login.html" class="custom-btn-dark">Log Out</a>
     </div>
 
   </div>
@@ -82,16 +175,16 @@
 <section class="info-strip">
   <div class="container">
     <div class="stat">
-      <strong>Original<br></br>Artworks</strong>
+      <strong>Original<br>Artworks</strong>
     </div>
     <div class="stat">
-      <strong>Talented<br></br>Artists</strong>
+      <strong>Talented<br>Artists</strong>
     </div>
     <div class="stat">
-      <strong>Creative<br></br>Community</strong>
+      <strong>Creative<br>Community</strong>
     </div>
     <div class="stat">
-      <strong>Curated<br></br>Collections</strong>
+      <strong>Curated<br>Collections</strong>
     </div>
   </div>
 </section>
@@ -137,7 +230,8 @@
         <div class="info">
           <h4>ALinesLunar</h4>
           <p class="tag-role">Sketch Artist · Yogyakarta</p>
-          <p class="rating">⭐ 4.9 <span class="count">(120 orders)</span></p>
+          <!-- UPDATE TAMPILAN RATING RIBUAN REVIEWS -->
+          <p class="rating">⭐ 4.9 <span style="color:#6c757d; font-weight:400;">(1.2k reviews)</span></p>
           <p class="price">Start from Rp150.000</p>
         </div>
       </div>
@@ -146,7 +240,8 @@
         <div class="info">
           <h4>DieGoInter</h4>
           <p class="tag-role">Watercolor Artist · Bandung</p>
-          <p class="rating">⭐ 4.8 <span class="count">(98 orders)</span></p>
+          <!-- UPDATE TAMPILAN RATING RIBUAN REVIEWS -->
+          <p class="rating">⭐ 4.8 <span style="color:#6c757d; font-weight:400;">(1.5k reviews)</span></p>
           <p class="price">Start from Rp250.000</p>
         </div>
       </div>
@@ -155,7 +250,8 @@
         <div class="info">
           <h4>Anindya</h4>
           <p class="tag-role">Digital Artist · Surabaya</p>
-          <p class="rating">⭐ 4.8 <span class="count">(154 orders)</span></p>
+          <!-- UPDATE TAMPILAN RATING RIBUAN REVIEWS -->
+          <p class="rating">⭐ 4.8 <span style="color:#6c757d; font-weight:400;">(2.1k reviews)</span></p>
           <p class="price">Start from Rp180.000</p>
         </div>
       </div>
@@ -164,7 +260,8 @@
         <div class="info">
           <h4>LIYACraft</h4>
           <p class="tag-role">Craft Artist · Lombok</p>
-          <p class="rating">⭐ 4.9 <span class="count">(76 orders)</span></p>
+          <!-- UPDATE TAMPILAN RATING RIBUAN REVIEWS -->
+          <p class="rating">⭐ 4.9 <span style="color:#6c757d; font-weight:400;">(1.1k reviews)</span></p>
           <p class="price">Start from Rp120.000</p>
         </div>
       </div>
@@ -183,7 +280,6 @@
   </div>
 </section>
 
-<!-- ============ FOOTER ============ -->
 <footer>
   <div class="footer-bottom">
     &copy; 2026 ArtBridge. Made for Final Project.
