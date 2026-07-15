@@ -1,4 +1,3 @@
-
 :root {
   --pink: #C9724A;
   --pink-dark: #A85A38;
@@ -337,7 +336,9 @@ margin-bottom:.4rem; }
 }
 
 @media (max-width: 860px) {
-  .slide-caption h2 { font-size: 1.7rem; }
+  .slide-caption h2 { font-size: 1.4rem; line-height: 1.25; margin-bottom: .5rem; }
+  .slide-caption p { font-size: .85rem; line-height: 1.4; margin-bottom: .9rem; }
+  .slide-caption .btn { padding: .55rem 1.1rem; font-size: .85rem; }
   .slide-caption { max-width: 90%; }
   .slide img { height: 380px; }
   .info-strip .stat + .stat { border-left: none; }
