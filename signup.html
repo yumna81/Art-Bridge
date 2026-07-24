@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/signup.css">
+<script src="js/auth.js"></script>
+<script>redirectIfLoggedIn();</script>
 
 <style id="mobile-responsive-patch">
 .hamburger-btn{display:none;background:none;border:0;font-size:28px;cursor:pointer}
@@ -91,6 +93,27 @@ document.addEventListener('DOMContentLoaded',function(){
 
         signupForm.addEventListener('submit', function(event) {
             event.preventDefault();
+
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const fullName = (firstName + ' ' + lastName).trim();
+
+            const user = {
+                firstName: firstName,
+                lastName: lastName,
+                fullName: fullName,
+                username: email.split('@')[0].toLowerCase(),
+                email: email,
+                role: '',
+                bio: '',
+                avatar: 'https://ui-avatars.com/api/?background=E9DFD2&color=4a4238&size=300&name=' + encodeURIComponent(fullName || 'New Artist')
+            };
+
+            // Brand new account: start with a completely empty portfolio.
+            localStorage.setItem('artbridge_portfolio', JSON.stringify([]));
+            setLoggedIn(user);
+
             alert('Account created successfully! Redirecting to Home...');
             window.location.href = "index.html";
         });

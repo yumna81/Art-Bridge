@@ -63,6 +63,19 @@ body {
     border-radius: 50px;
 }
 
+.detail-rating {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #4a4238;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.detail-rating .bi-star-fill {
+    color: #f5b301;
+}
+
 .description-text {
     line-height: 1.7;
 }
@@ -73,6 +86,31 @@ body {
     border: 1px solid #ebe3cc;
     border-radius: 12px;
     padding: 20px;
+}
+
+.rate-card {
+    text-align: center;
+}
+
+.star-rating-input {
+    font-size: 1.9rem;
+    display: inline-flex;
+    gap: 6px;
+}
+
+.star-rating-input i {
+    color: #d8cdb8;
+    cursor: pointer;
+    transition: color 0.15s, transform 0.15s;
+}
+
+.star-rating-input i:hover,
+.star-rating-input i.hovered {
+    transform: scale(1.1);
+}
+
+.star-rating-input i.filled {
+    color: #f5b301;
 }
 
 /* ---------- Responsive ---------- */
@@ -91,5 +129,9 @@ body {
 
     .info-card strong {
         font-size: 0.92rem;
+    }
+
+    .star-rating-input {
+        font-size: 1.6rem;
     }
 }

@@ -13,6 +13,8 @@
 <link rel="stylesheet" href="css/detail-portfolio.css">
 <link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/settings.css">
+<script src="js/auth.js"></script>
+<script>requireLogin();</script>
 
 <style id="mobile-responsive-patch">
 .hamburger-btn{display:none;background:none;border:0;font-size:28px;cursor:pointer}
@@ -202,16 +204,22 @@ document.addEventListener('DOMContentLoaded',function(){
     <div class="custom-menu">
       <a href="index.html" class="custom-link">Home</a>
       <a href="search.html" class="custom-link">Explore Artists</a>
-      <a href="settings.html" class="custom-link">Settings</a>
+      <a href="settings.html" class="custom-link active-link">Settings</a>
       <a href="about.html" class="custom-link">About Us</a>
 
-      <a href="profile.html" class="d-inline-flex align-items-center" aria-label="Open artist profile">
-        <div class="user-avatar-nav">
-          <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="User">
-        </div>
-      </a>
+      <div class="auth-user-only" style="display:none; align-items:center; gap:0.75rem;">
+        <a href="profile.html" class="d-inline-flex align-items-center" aria-label="Open your profile">
+          <div class="user-avatar-nav">
+            <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="User" class="nav-user-avatar">
+          </div>
+        </a>
+        <a href="#" class="custom-btn-dark" onclick="logout(); return false;">Log Out</a>
+      </div>
 
-      <a href="login.html" class="custom-btn-dark">Log Out</a>
+      <div class="auth-guest-only" style="display:none; align-items:center; gap:0.75rem;">
+        <a href="login.html" class="custom-btn-outline">Login</a>
+        <a href="signup.html" class="custom-btn-dark">Sign Up</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -291,11 +299,7 @@ document.addEventListener('DOMContentLoaded',function(){
   </div>
 </footer>
 
-<script src="js/partials.js"></script>
 <script>
-  renderNavbar('settings');
-  renderFooter();
-
   document.getElementById('accountForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const success = document.getElementById('settingsSuccess');
@@ -307,6 +311,9 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('deleteAccountBtn').addEventListener('click', function () {
     const confirmed = confirm('Are you sure you want to delete your account? This cannot be undone.');
     if (confirmed) {
+      localStorage.removeItem('artbridge_isLoggedIn');
+      localStorage.removeItem('artbridge_currentUser');
+      localStorage.removeItem('artbridge_portfolio');
       alert('Your account has been deleted. Please login again.');
       window.location.href = 'login.html';
     }

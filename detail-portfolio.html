@@ -7,23 +7,164 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/detail-portfolio.css">
+    <script src="js/auth.js"></script>
+
+<style>
+  .custom-navbar {
+    background: #fff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+    padding: 0;
+    border-bottom: 1px solid #E9DFD2;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+  }
+  .custom-navbar .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    min-height: 56px;
+  }
+  .custom-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+  .custom-brand span {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: #212529;
+    font-size: 1.25rem;
+  }
+  .custom-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .custom-link {
+    font-family: 'Inter', sans-serif;
+    color: #212529;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .custom-link:hover {
+    color: #dfcbb5;
+  }
+  .custom-btn-outline {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #212529;
+    background-color: transparent;
+    border: 1px solid #212529;
+    border-radius: 50rem;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .custom-btn-outline:hover {
+    background-color: #212529;
+    color: #fff;
+  }
+  .custom-btn-dark {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #212529;
+    border: 1px solid #212529;
+    border-radius: 50rem;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .custom-btn-dark:hover {
+    background-color: #dfcbb5;
+    border-color: #000000;
+  }
+
+  .user-avatar-nav {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #ebe3cc;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .user-avatar-nav img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+</style>
+
+<style id="mobile-responsive-patch">
+.hamburger-btn{display:none;background:none;border:0;font-size:28px;cursor:pointer}
+@media (max-width:430px){
+  .hamburger-btn{display:block}
+  .custom-navbar .nav-container{padding:0 .8rem!important}
+  .custom-menu{
+    display:none!important;position:absolute;top:56px;left:0;right:0;
+    background:#fff;flex-direction:column;align-items:flex-start!important;
+    padding:1rem;border-top:1px solid #ddd;gap:1rem!important;z-index:9999;
+  }
+  .custom-menu.mobile-open{display:flex!important}
+  .custom-link,.custom-btn-dark,.custom-btn-outline{width:100%}
+  img{max-width:100%;height:auto}
+  .hero,.hero-content,.cards,.grid,.row,[class*="container"]{max-width:100%}
+  body{overflow-x:hidden}
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ const btn=document.querySelector('.hamburger-btn');
+ const menu=document.querySelector('.custom-menu');
+ if(btn&&menu){btn.onclick=()=>menu.classList.toggle('mobile-open');}
+});
+</script>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-web shadow-sm sticky-top">
-        <div class="container-fluid px-4">
-            <a class="navbar-brand fw-bold text-dark text-decoration-none" href="profile-artist.html">ArtBridge</a>
-            
-            <div class="ms-auto d-flex align-items-center">
-            
-                <a href="profile.html" class="d-inline-flex align-items-center" aria-label="Open artist profile">
-                    <div class="user-avatar-nav">
-                        <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="User">
-                    </div>
-                </a>
+    <nav class="custom-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="custom-brand">
+                <img src="img/logo-artbridge.png" alt="ArtBridge Logo" style="height: 24px; width: auto;">
+                <span>ArtBridge</span>
+            </a>
+            <button class="hamburger-btn">☰</button>
+
+            <div class="custom-menu">
+                <div class="auth-user-only" style="display:none; align-items:center; gap:0.75rem;">
+                  <a href="profile.html" class="d-inline-flex align-items-center" aria-label="Open your profile">
+                      <div class="user-avatar-nav">
+                          <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="User" class="nav-user-avatar">
+                      </div>
+                  </a>
+                  <a href="#" class="custom-btn-dark" onclick="logout(); return false;">Log Out</a>
+                </div>
+
+                <div class="auth-guest-only" style="display:none; align-items:center; gap:0.75rem;">
+                  <a href="login.html" class="custom-btn-outline">Login</a>
+                  <a href="signup.html" class="custom-btn-dark">Sign Up</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -34,40 +175,172 @@
         <div class="row g-4 g-md-5">
             <div class="col-12 col-md-6">
                 <div class="detail-img-holder">
-                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&q=80&w=600" alt="Artwork Detail">
+                    <img id="detailImage" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&q=80&w=600" alt="Artwork Detail">
                 </div>
             </div>
 
             <div class="col-12 col-md-6">
                 <div class="d-flex align-items-center gap-3 mb-3">
-                    <span class="badge-category">Digital Art</span>
+                    <span class="badge-category" id="detailCategory">Digital Art</span>
+                    <span class="detail-rating"><i class="bi bi-star-fill"></i> <span id="detailAverageRating">4.9</span> <span class="text-muted small">(<span id="detailReviewCount">128</span> reviews)</span></span>
                 </div>
                 
-                <h1 class="artwork-title mb-2">Blooms in the Dark</h1>
-                <p class="text-muted mb-4">Created by <span class="fw-semibold">@alineslunar</span></p>
+                <h1 class="artwork-title mb-2" id="detailTitle">Blooms in the Dark</h1>
+                <p class="text-muted mb-4">Created by <span class="fw-semibold" id="detailOwner">@alineslunar</span></p>
                 
                 <h5 class="fw-bold text-dark mb-2">Description</h5>
-                <p class="text-secondary mb-4 description-text">
+                <p class="text-secondary mb-4 description-text" id="detailDescription">
                     Eksplorasi perpaduan warna-warna klasik dengan teknik pencahayaan kontras tinggi yang memberikan kesan dramatis pada objek bunga di atas latar belakang gelap gulita. Proyek ini memakan waktu pengerjaan sekitar 12 jam.
                 </p>
 
-                <div class="info-card">
+                <div class="info-card mb-4">
                     <div class="row text-center">
                         <div class="col-6 border-end">
                             <span class="text-muted d-block small mb-1">Published</span>
-                            <strong class="text-dark">Jan 24, 2026</strong>
+                            <strong class="text-dark" id="detailDate">Jan 24, 2026</strong>
                         </div>
                         <div class="col-6">
                             <span class="text-muted d-block small mb-1">Tools Used</span>
-                            <strong class="text-dark">Procreate, iPad Pro</strong>
+                            <strong class="text-dark" id="detailTools">Procreate, iPad Pro</strong>
                         </div>
                     </div>
+                </div>
+
+                <div class="info-card rate-card">
+                    <span class="text-muted d-block small mb-2">Give this artwork a rating</span>
+                    <div class="star-rating-input" id="starRatingInput">
+                        <i class="bi bi-star" data-value="1"></i>
+                        <i class="bi bi-star" data-value="2"></i>
+                        <i class="bi bi-star" data-value="3"></i>
+                        <i class="bi bi-star" data-value="4"></i>
+                        <i class="bi bi-star" data-value="5"></i>
+                    </div>
+                    <span class="text-muted small d-block mt-2" id="yourRatingLabel">You haven't rated this artwork yet.</span>
                 </div>
 
             </div>
         </div>
 
     </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const params = new URLSearchParams(window.location.search);
+
+        // Demo artwork (opened without params, e.g. from Explore Artists / Artist Profile demo cards)
+        // keeps its own fixed rating key so its 4.9/128 baseline stays consistent.
+        const artworkId = params.get('id') || 'demo-blooms-in-the-dark';
+
+        // If this page was opened from someone's uploaded portfolio, fill in their real data.
+        if (params.get('title')) document.getElementById('detailTitle').textContent = params.get('title');
+        if (params.get('category')) document.getElementById('detailCategory').textContent = params.get('category');
+        if (params.get('image')) document.getElementById('detailImage').src = params.get('image');
+        if (params.get('owner')) document.getElementById('detailOwner').textContent = params.get('owner');
+        if (params.get('description')) document.getElementById('detailDescription').textContent = params.get('description');
+        if (params.get('date')) document.getElementById('detailDate').textContent = params.get('date');
+        if (params.get('tools')) document.getElementById('detailTools').textContent = params.get('tools');
+
+        // ---- Rating logic (stored per artwork id in localStorage) ----
+        const RATINGS_KEY = 'artbridge_artwork_ratings';
+
+        function loadAllRatings() {
+            try {
+                const stored = JSON.parse(localStorage.getItem(RATINGS_KEY));
+                return stored && typeof stored === 'object' ? stored : {};
+            } catch (e) {
+                return {};
+            }
+        }
+
+        function saveAllRatings(data) {
+            localStorage.setItem(RATINGS_KEY, JSON.stringify(data));
+        }
+
+        const allRatings = loadAllRatings();
+
+        if (!allRatings[artworkId]) {
+            // Seed the demo artwork with its original baseline rating; real uploads start fresh (no reviews yet).
+            allRatings[artworkId] = artworkId === 'demo-blooms-in-the-dark'
+                ? { sum: 4.9 * 128, count: 128, voters: {} }
+                : { sum: 0, count: 0, voters: {} };
+        }
+
+        const stars = document.querySelectorAll('#starRatingInput i');
+        const averageEl = document.getElementById('detailAverageRating');
+        const countEl = document.getElementById('detailReviewCount');
+        const yourRatingLabel = document.getElementById('yourRatingLabel');
+
+        function currentAverage() {
+            const record = allRatings[artworkId];
+            return record.count > 0 ? record.sum / record.count : 0;
+        }
+
+        function renderAverage() {
+            const avg = currentAverage();
+            averageEl.textContent = avg > 0 ? avg.toFixed(1) : '—';
+            countEl.textContent = allRatings[artworkId].count;
+        }
+
+        function paintStars(value) {
+            stars.forEach(function (star) {
+                const starValue = parseInt(star.dataset.value, 10);
+                star.classList.toggle('bi-star-fill', starValue <= value);
+                star.classList.toggle('bi-star', starValue > value);
+                star.classList.toggle('filled', starValue <= value);
+            });
+        }
+
+        function refreshYourRatingLabel() {
+            const user = getCurrentUser();
+            const username = user ? (user.username || user.email) : null;
+            const record = allRatings[artworkId];
+            const myVote = username && record.voters[username];
+
+            if (myVote) {
+                yourRatingLabel.textContent = 'You rated this artwork ' + myVote + ' star' + (myVote > 1 ? 's' : '') + '.';
+                paintStars(myVote);
+            } else {
+                yourRatingLabel.textContent = "You haven't rated this artwork yet.";
+                paintStars(0);
+            }
+        }
+
+        renderAverage();
+        refreshYourRatingLabel();
+
+        stars.forEach(function (star) {
+            star.addEventListener('mouseenter', function () {
+                paintStars(parseInt(star.dataset.value, 10));
+            });
+
+            star.addEventListener('mouseleave', function () {
+                refreshYourRatingLabel();
+            });
+
+            star.addEventListener('click', function (event) {
+                if (!requireLoginForAction(event)) return;
+
+                const value = parseInt(star.dataset.value, 10);
+                const user = getCurrentUser();
+                const username = user ? (user.username || user.email) : 'guest';
+                const record = allRatings[artworkId];
+
+                if (record.voters[username]) {
+                    // Update their existing vote instead of counting it twice.
+                    record.sum = record.sum - record.voters[username] + value;
+                } else {
+                    record.sum += value;
+                    record.count += 1;
+                }
+                record.voters[username] = value;
+
+                saveAllRatings(allRatings);
+                renderAverage();
+                refreshYourRatingLabel();
+            });
+        });
+    });
+    </script>
 
 </body>
 </html>

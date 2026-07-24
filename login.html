@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/login.css">
+<script src="js/auth.js"></script>
+<script>redirectIfLoggedIn();</script>
 
 <style id="mobile-responsive-patch">
 .hamburger-btn{display:none;background:none;border:0;font-size:28px;cursor:pointer}
@@ -62,13 +64,28 @@ document.addEventListener('DOMContentLoaded',function(){
   </div>
 </section>
 
-<script src="js/auth.js"></script>
 <script>
     const loginForm = document.getElementById('loginForm');
 
     loginForm.addEventListener('submit', function(event) {
         event.preventDefault();
-        setLoggedIn();
+
+        const email = document.getElementById('email').value.trim();
+        const existingUser = getCurrentUser();
+
+        // Keep the previously saved profile/portfolio if this email matches an earlier
+        // signup/login on this browser, otherwise start a fresh basic profile.
+        const user = (existingUser && existingUser.email === email) ? existingUser : {
+            firstName: email.split('@')[0],
+            fullName: email.split('@')[0],
+            username: email.split('@')[0].toLowerCase(),
+            email: email,
+            role: 'Artist',
+            bio: '',
+            avatar: 'https://ui-avatars.com/api/?background=E9DFD2&color=4a4238&size=300&name=' + encodeURIComponent(email.split('@')[0])
+        };
+
+        setLoggedIn(user);
         alert('Login successful! Redirecting to Home...');
         window.location.href = "index.html";
     });

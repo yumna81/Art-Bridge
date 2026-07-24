@@ -10,7 +10,6 @@
 
 <link rel="stylesheet" href="css/index.css">
 <script src="js/auth.js"></script>
-<script>requireLogin();</script>
 
 <style>
   .custom-navbar {
@@ -169,18 +168,24 @@ document.addEventListener('DOMContentLoaded',function(){
 <button class="hamburger-btn">☰</button>
 
     <div class="custom-menu">
-      <a href="index.html" class="custom-link" >Home</a>
+      <a href="index.html" class="custom-link active-link">Home</a>
       <a href="search.html" class="custom-link">Explore Artists</a>
       <a href="settings.html" class="custom-link">Settings</a>
       <a href="about.html" class="custom-link">About Us</a>
 
-      <a href="profile.html" class="d-inline-flex align-items-center" aria-label="Open artist profile">
-        <div class="user-avatar-nav">
-          <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="User">
-        </div>
-      </a>
+      <div class="auth-user-only" style="display:none; align-items:center; gap:0.75rem;">
+        <a href="profile.html" class="d-inline-flex align-items-center" aria-label="Open your profile">
+          <div class="user-avatar-nav">
+            <img src="https://picsum.photos/seed/artbridgeuser/300/300" alt="User" class="nav-user-avatar">
+          </div>
+        </a>
+        <a href="#" class="custom-btn-dark" onclick="logout(); return false;">Log Out</a>
+      </div>
 
-      <a href="login.html" class="custom-btn-dark">Log Out</a>
+      <div class="auth-guest-only" style="display:none; align-items:center; gap:0.75rem;">
+        <a href="login.html" class="custom-btn-outline">Login</a>
+        <a href="signup.html" class="custom-btn-dark">Sign Up</a>
+      </div>
     </div>
   </div>
 </nav>
@@ -348,6 +353,5 @@ document.addEventListener('DOMContentLoaded',function(){
 
 <script src="js/nav.js"></script>
 <script src="js/slider.js"></script>
-<script src="js/auth.js"></script>
 </body>
 </html>
