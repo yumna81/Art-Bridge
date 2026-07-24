@@ -11,12 +11,12 @@ function setLoggedIn() {
 
 function logout() {
   localStorage.removeItem(AUTH_KEY);
-  window.location.href = 'login.html';
+  window.location.href = 'index.html';
 }
 
 function requireLogin() {
   if (!isLoggedIn()) {
-    window.location.replace('login.html');
+    window.location.replace('index.html');
   }
 }
 
